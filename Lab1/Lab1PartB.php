@@ -60,8 +60,8 @@
     ?>
 
     <?php
-    foreach ($colour as $index => $item) {
-        echo "<li>".($index + 1).":$item</li>";
+    foreach ($colour as $index) {
+        echo "<li>$index</li>";
     }
 
     ?>
