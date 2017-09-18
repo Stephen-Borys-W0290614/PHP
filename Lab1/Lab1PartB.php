@@ -17,15 +17,15 @@
     <?php
         $name = "Stephen";
 
-        echo $name;
+        echo "$name</br>";
 
         $middle = "Michale";
 
-        echo $middle;
+        echo "$middle</br>";
 
         $last = "Borys";
 
-        echo $last;
+        echo "$last</br>";
 
         echo "$name.$middle.$last<br/>";
     ?>
@@ -40,7 +40,7 @@
             echo "Question 3. 69%6.... Answer:$question3<br/>";
     ?>
 
-        }
+
     <?php
         for ($x = 10; $x > 0; $x--){
             echo "$x..";
@@ -67,13 +67,13 @@
     ?>
 
     <?php
-    $index = 7;
-    $colour = array("Pink","Black","Red","Blue","Orange","Purple","White");
+    $index = 0;
 
-    while($index > 0){
-        echo "<li>$colour</li>";
-        $index--;
+    while($index < count($colour)){
+        echo "<li>$colour[$index]</li>";
+        $index++;
     }
+
     ?>
 
 
