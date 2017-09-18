@@ -50,6 +50,32 @@
         }
     ?>
 
-    <?php ?>
+    <?php
+    $colour = array("Pink","Black","Red","Blue","Orange","Purple","White");
+    ?>
+
+    <?php
+    for($x = 0; $x < count($colour);$x++){
+    echo"<li>$colour[$x]</li>";}
+    ?>
+
+    <?php
+    foreach ($colour as $index => $item) {
+        echo "<li>".($index + 1).":$item</li>";
+    }
+
+    ?>
+
+    <?php
+    $index = 7;
+    $colour = array("Pink","Black","Red","Blue","Orange","Purple","White");
+
+    while($index > 0){
+        echo "<li>$colour</li>";
+        $index--;
+    }
+    ?>
+
+
 </body>
 </html>
