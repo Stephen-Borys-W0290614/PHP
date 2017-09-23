@@ -4,6 +4,7 @@
     <title>Process Page for Post</title>
 </head>
 <body>
+<div>
     <?php
     $number = ($_POST['number']);
     $text = ($_POST['text']);
@@ -31,7 +32,8 @@
     }
 
     ?>
-
+</div>
+<div>
 
     <h1> The loop to show all 7 items working </h1>
     <?php
@@ -42,13 +44,16 @@
             echo 'Invalid Entry';
         }
         else {
-
-
             echo '<h' . $number . '>' . $text . '</h' . $number . '>';
         }
     }
-
-
     ?>
+</div>
+<div>
+    <form action="Lab2PartAPostStep2.php" method="post">
+        <p>Please Input Some Text: <input type="text" name="text" /></p>
+        <p><input type="submit" name="Submit" value="Send Form" /></p>
+    </form>
+</div>
 </body>
 </html>
