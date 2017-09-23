@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Process Page for Post</title>
+    <title>Page 2</title>
 </head>
 <body>
 <div>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Process Page for Post</title>
+    <title>Page 4</title>
 </head>
 <body>
-<h1>
+<div>
     <?php
 
     $globalAge = $_POST['age'];
@@ -19,6 +19,13 @@
     ageString();
     echo $globalAge;
     ?>
-</h1>
+</div>
+
+<div>
+    <form action="Lab2PartAPostStep4.php" method="post">
+        <p><input type="submit" name="Submit" value="Send Form" /></p>
+    </form>
+
+</div>
 </body>
 </html>
