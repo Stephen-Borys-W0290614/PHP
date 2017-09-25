@@ -23,7 +23,7 @@
 
 <div>
     <form action="Lab2PartAPostStep4.php" method="post">
-        <p><input type="submit" name="Submit" value="Send Form" /></p>
+        <p><input type="submit" name="Submit" value="Continue" /></p>
     </form>
 
 </div>

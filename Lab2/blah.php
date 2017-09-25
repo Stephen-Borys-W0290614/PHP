@@ -23,7 +23,7 @@
 
 <div>
     <form action="blah2.html" method="post">
-        <p><input type="submit" name="Submit" value="Send Form" /></p>
+        <p><input type="submit" name="Submit" value="Continue" /></p>
     </form>
 
 </div>

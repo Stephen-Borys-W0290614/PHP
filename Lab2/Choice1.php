@@ -59,6 +59,9 @@
     endwhile; ?>
     </tbody>
 </table>
+<form action="blah.html" method="post">
+    <p><input type="submit" name="Submit" value="Continue" /></p>
+</form>
 
 </body>
 </html>

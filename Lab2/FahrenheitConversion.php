@@ -7,7 +7,12 @@
 <body>
 
 <form action="Choice1.php" method="post">
-    <p><input type="submit" name="Submit" value="Send Form" /></p>
+    <p><input type="submit" name="Submit" value="CELCIUS TO FAHRENHEIT " /></p>
+</form>
+
+
+<form action="Choice2.php" method="post">
+    <p><input type="submit" name="Submit" value="FAHRENHEIT TO CELCIUS" /></p>
 </form>
 
 <?php
