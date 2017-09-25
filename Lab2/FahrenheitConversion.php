@@ -6,6 +6,10 @@
 </head>
 <body>
 
+<form action="Choice1.php" method="post">
+    <p><input type="submit" name="Submit" value="Send Form" /></p>
+</form>
+
 <?php
 for($fahrenheit = 0; $fahrenheit < 101; $fahrenheit++){
     $celcius = round(($fahrenheit - 32) * 5/9);
@@ -17,7 +21,7 @@ for($fahrenheit = 0; $fahrenheit < 101; $fahrenheit++){
     <table border = 1>
         <thead>
         <tr>
-            <th>
+            <th style="background-color:#A4A4A4;">
                 Fahrenheit
             </th>
             <th>
@@ -31,7 +35,7 @@ for($fahrenheit = 0; $fahrenheit < 101; $fahrenheit++){
         while ($fahrenheit <= 100) : ?>
             <?php $celcius = round(($fahrenheit - 32) * 5/9);?>
             <tr>
-                <td>
+                <td style="background-color:#A4A4A4;">
                     <?php
                     echo $fahrenheit
                     ?>
@@ -47,6 +51,8 @@ for($fahrenheit = 0; $fahrenheit < 101; $fahrenheit++){
             endwhile; ?>
         </tbody>
     </table>
+
+
 
 </body>
 </html>
