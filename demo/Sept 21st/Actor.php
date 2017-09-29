@@ -14,20 +14,20 @@ require("dbconn.php");
 <body>
 <table>
     <thead>
-        <tr>
-            <th>
-                Title
-            </th>
-            <th>
-                Description
-            </th>
-        </tr>
+    <tr>
+        <th>
+            First Name
+        </th>
+        <th>
+            Last Name
+        </th>
+    </tr>
     </thead>
     <tbody>
 
-<?php
-   $conn = connectToDatabase();
-    $result = mysqli_query($conn, "select * from film limit 0,10");
+    <?php
+    $conn = connectToDatabase();
+    $result = mysqli_query($conn, "select * from actor");
 
     if(!$result){
         die("Could Not Retreave Data " . mysqli_error());
@@ -36,20 +36,20 @@ require("dbconn.php");
     while ($row = mysqli_fetch_assoc($result)): ?>
         <tr>
             <td>
-            <?php echo $row['title'] ?>
+                <?php echo $row['first_name'] ?>
             </td>
             <td>
-            <?php echo $row['description'];?>
+                <?php echo $row['last_name'];?>
             </td>
         </tr>
-    <?php
+        <?php
     endwhile;
     ?>
 
 
 
 
-</tbody>
+    </tbody>
 </table>
 </body>
 </html>
