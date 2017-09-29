@@ -16,7 +16,7 @@ and open the template in the editor.
                 <th><a href="filmSortable.php?sort=rate">Rental Rate</a></th>
             </tr>
         <?php
-            $db = mysqli_connect("localhost","root", "","sakila");
+            $db = mysqli_connect("localhost","root", "inet2005","sakila");
             if (!$db)
             {
                     die('Could not connect to the Sakila Database: ' . mysqli_connect_error());
