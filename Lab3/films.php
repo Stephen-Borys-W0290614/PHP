@@ -52,7 +52,7 @@ require("dbconn.php");
     </tbody>
 </table>
 <form action="films2.php" method="post">
-    <p>Search:  <input type="text" name="text" /></p>
+    <p>Search:  <input type="text" name="search" /></p>
     <p><input type="submit" name="Submit" value="Send Form" /></p>
 </form>
 </body>

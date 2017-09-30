@@ -52,7 +52,7 @@ $search = ($_POST['search'])
 
     </tbody>
 </table>
-<form action="films3.php" method="post">
+<form action="films2.php" method="post">
     <p>Search:  <input type="text" name="search" /></p>
     <p><input type="submit" name="Submit" value="Send Form" /></p>
 </form>
