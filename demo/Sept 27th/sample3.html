@@ -8,7 +8,7 @@
         <form id="myForm" name="myForm" method="post" action="sampleTargetPage.html" onsubmit="return checkForm()">
              <p>
                 <label>First Name
-                    <input type="text" name="firstName" id="firstName" onFocus="boldText(this.id)" onBlur="normalText(this.id)"/>
+                    <input type="text" name="firstName" id="firstName" onfocusin="focusFunction()" onFocus="italicsText(this.id)" onBlur="normalText(this.id)"/>
                 </label> <br />
                 <label>Last Name
                     <input type="text" name="lastName" id="secondName" onFocus="boldText(this.id)" onBlur="normalText(this.id)"/>

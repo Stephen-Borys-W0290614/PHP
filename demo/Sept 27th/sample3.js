@@ -27,7 +27,7 @@ function boldText(fieldID)
 	var myFormItem = document.getElementById(fieldID);
 	if(myFormItem != null)
 	{
-		myFormItem.style.fontWeight = "bold";
+		myFormItem.style.fontWeight = "italics";
 	}
 }
 
@@ -38,4 +38,9 @@ function normalText(fieldID)
 	{
 		myFormItem.style.fontWeight = "normal";
 	}
+}
+
+function focusFunction() {
+    document.getElementById("firstName").style.background = "yellow";
+
 }

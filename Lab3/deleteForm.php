@@ -67,5 +67,10 @@ if ($conn->connect_error) {
     <p>Enter ID To Delete: <input type="number" name="id" /></p>
     <p><input type="submit" name="Submit" value="Send Form" /></p>
 </form>
+
+<form action="updateActor1.php" method="post">
+    <p>Enter ID To Update: <input type="number" name="id" /></p>
+    <p><input type="submit" name="Submit" value="Send Form" /></p>
+</form>
 </body>
 </html>

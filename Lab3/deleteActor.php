@@ -15,10 +15,14 @@ if ($conn->connect_error) {
 $sql = "DELETE FROM actor WHERE actor_id=$id";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Affected rows: " . mysqli_affected_rows($conn);
+    echo "Affected rows: " . mysqli_affected_rows($conn) ;
 } else {
     echo "Error deleting record: " . $conn->error;
 }
 
 $conn->close();
+
+
+echo '<a href="http://localhost:8000/Lab3/deleteForm.php">         Go Back</a>';
+
 ?>
