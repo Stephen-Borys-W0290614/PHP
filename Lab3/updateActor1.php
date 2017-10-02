@@ -36,7 +36,7 @@ $result = mysqli_query($conn,"SELECT * FROM actor WHERE actor_id = '$id'")->fetc
 <form action="updateActor.php" method="post">
     <p> Update First Name: <input name="fName" value="<?php echo $result['first_name']?>" <br/></p>
     <p> Update Last Name: <input name="lName" value="<?php echo $result['last_name']?>" <br/></p>
-    <p> ID: <input type="number" name="id1" value="<?php echo $id ?>">
+    <p> <input type="hidden" name="id1" value="<?php echo $id ?>">
     <p><input type="submit" name="Submit" value="Send Form" /></p>
 </form>
 
