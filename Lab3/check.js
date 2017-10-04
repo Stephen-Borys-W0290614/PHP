@@ -33,7 +33,7 @@ function checkForm()
         alert("You must enter a last name");
         makeRed2();
         makeRight();
-        makeRight2();
+
         TermsandConditions();
         return false;
     }

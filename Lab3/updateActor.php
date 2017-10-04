@@ -16,10 +16,13 @@ if ($conn->connect_error) {
 $sql = "UPDATE actor SET first_name = '$first', last_name= '$last' WHERE actor_id='$id1'";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Record updated successfully";
+    echo "Affected rows: " . mysqli_affected_rows($conn) ;
 } else {
     echo "Error updating record: " . $conn->error;
 }
 
 $conn->close();
+
+echo '<a href="http://localhost:8000/Lab3/deleteForm.php">         Go Back</a>';
+
 ?>
