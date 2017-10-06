@@ -16,7 +16,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "UPDATE actor SET first_name = '$first', last_name= '$last', gender = '$gender', birth_date = '$DOB', hire_date = '$HD' WHERE emp_no ='$id1'";
+$sql = "UPDATE employees SET first_name = '$first', last_name= '$last', gender = '$gender', birth_date = '$DOB', hire_date = '$HD' WHERE emp_no ='$id1'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Affected rows: " . mysqli_affected_rows($conn) ;
@@ -26,6 +26,6 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 
-echo '<a href="http://localhost:8000/Lab3/deleteForm.php">         Go Back</a>';
+echo '<a href="http://localhost:8000/Assignment1/showEmployees.php">         Go Back</a>';
 
 ?>
