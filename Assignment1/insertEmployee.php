@@ -2,7 +2,7 @@
 require("dbconn.php");
 $first = ($_POST['firstName']);
 $last = ($_POST['secondName']);
-$gender = ($_POST['theGender']);
+$gender = ($_POST['gender']);
 $DOB = ($_POST['dateOfBirth']);
 $HD = ($_POST['hireDate']);
 ?>

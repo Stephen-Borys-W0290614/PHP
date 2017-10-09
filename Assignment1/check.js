@@ -3,16 +3,19 @@ function checkForm()
 
     var ck_name = /^[A-Za-z0-9 ]{3,20}$/;
     var reg = /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?\s)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?$/;
-    var rxDatePattern = /^(\d{1,2})(\/|-)(\d{1,2})(\/|-)(\d{4})$/;
+    var rxDatePattern = /^\d{4}-\d{2}-\d{2}$/;
+    var regex = /^(\d{4})(\/|-)(\d{2})(\/|-)(\d{2})$/;
     var name = document.forms["myForm"].firstName.value;
     var lastName = document.forms['myForm'].secondName.value;
-    var dateOfBirth = document.forms['myForm'].dateOfBirth;
+    var birthDate = document.forms['myForm'].dateOfBirth.value;
+    var hireDate = document.forms['myForm'].hireDate.value;
 
 
 
     if (ck_name.test(name) === false){
         /*debugger;*/
-        alert("Nice Try Nerd")
+        alert("You must enter a valid first name")
+        makeRed();
         return false;
     }
 
@@ -21,25 +24,38 @@ function checkForm()
     else if(ck_name.test(lastName) === false)
     {
 
-        alert("You must enter a last name");
+        alert("You must enter a valid last name");
+
         makeRed2();
         makeRight();
-
-        TermsandConditions();
         return false;
     }
     else if(document.forms["myForm"].gender.selectedIndex ==0)
     {
         alert("You must choose a gender");
+        makeRight();
+        makeRight2();
+        return false;
+    }
+
+    else if(rxDatePattern.test(birthDate) === false){
+        alert("You must enter a valid birth date");
+        makeRed4();
+        makeRight();
+        makeRight2();
         return false;
     }
 
 
-    else if (!document.getElementById("terms").checked){
-        alert("plz check");
-        TermsandConditions();
+    else if (rxDatePattern.test(hireDate) === false){
+        alert("You must enter a valid hire date");
+        makeRed5();
+        makeRight();
+        makeRight2();
+        makeRight4();
         return false;
     }
+
     else
     {
         alert("The form is valid. Would go to server now.");
@@ -81,21 +97,16 @@ function focusFunction2() {
 
 
 }
-function focusFunction3() {
-    document.getElementById("add1").style.background = "yellow";
-    document.getElementById("address").style.textDecoration = 'underline';
 
-
-}
 function focusFunction4() {
-    document.getElementById("add2").style.background = "yellow";
-    document.getElementById("address2").style.textDecoration = 'underline';
+    document.getElementById("dateOfBirth").style.background = "yellow";
+    document.getElementById("dob").style.textDecoration = 'underline';
 
 
 }
 function focusFunction5() {
-    document.getElementById("email").style.background = "yellow";
-    document.getElementById("labelEmail").style.textDecoration = 'underline';
+    document.getElementById("hireDate").style.background = "yellow";
+    document.getElementById("hd").style.textDecoration = 'underline';
 
 
 }
@@ -108,9 +119,6 @@ function makeRed2(){
     document.getElementById("secondName").style.borderColor = "red";
 }
 
-function makeRed3(){
-    document.getElementById("theGender").style.borderColor = "red";
-}
 
 function makeRed4(){
     document.getElementById("dateOfBirth").style.borderColor = "red";
@@ -131,10 +139,6 @@ function makeRight2(){
 
 }
 
-function makeRight3(){
-    document.getElementById("theGender").style.borderColor = "";
-
-}
 
 function makeRight4(){
     document.getElementById("dateOfBirth").style.borderColor = "";
@@ -155,12 +159,10 @@ function makeRight5(){
 function blurFunction(){
     document.getElementById("firstName").style.background = "";
     document.getElementById("secondName").style.background = "";
-    document.getElementById("theGender").style.background = "";
-    document.getElementById("dateOfBirts").style.background = "";
+    document.getElementById("dateOfBirth").style.background = "";
     document.getElementById("hireDate").style.background = "";
     document.getElementById("first").style.textDecoration = '';
     document.getElementById("last").style.textDecoration = '';
-    document.getElementById("gender").style.textDecoration = '';
     document.getElementById("dob").style.textDecoration = '';
     document.getElementById("hd").style.textDecoration = '';
 
