@@ -15,19 +15,20 @@ function checkForm()
         return false;
     }*/
 
+    var ck_name = /^[A-Za-z0-9 ]{3,20}$/;
+    var reg = /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?\s)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?$/;
+    var name = document.forms["myForm"].firstName.value;
+    var lastName = document.forms['myForm'].secondName.value;
 
-
-    if(document.forms["myForm"].firstName.value.length ==0)
-    {
-        alert("You must enter a first name");
-        makeRed();
-        TermsandConditions();
+    if (ck_name.test(name) === false){
+        /*debugger;*/
+        alert("Nice Try Nerd")
         return false;
     }
 
 
 
-    else if(document.forms["myForm"].secondName.value.length ==0)
+    else if(ck_name.test(lastName) === false)
     {
 
         alert("You must enter a last name");

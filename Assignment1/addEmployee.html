@@ -5,7 +5,7 @@
     <script src="check.js" type="text/javascript"></script>
 </head>
 <body>
-<form id="myForm" name="myForm" method="post" action="finalJava.html" onsubmit="return checkForm()">
+<form id="myForm" name="myForm" method="post" action="insertEmployee.php" onsubmit="return checkForm()">
     <p>
         <label id = "first">First Name:
             <input type="text" name="firstName" id="firstName" onfocusin="focusFunction()" onfocusout="blurFunction()" onFocus="editText(this.id)" onBlur="normalText(this.id)"/>
@@ -18,28 +18,19 @@
     </p>
     <p>
         <label id = "gender">Gender:
-            <input type="text" name="theGender" id="theGender" onfocusin="focusFunction2()" onfocusout="blurFunction()" onFocus="editText(this.id)" onBlur="normalText(this.id)"/>
+            <input type="text" name="theGender" id="theGender" onfocusin="focusFunction3()" onfocusout="blurFunction()" onFocus="editText(this.id)" onBlur="normalText(this.id)"/>
         </label>
     </p>
     <p>
         <label id = "dob">Date Of Birth:
-            <input type="text" name="dateOfBirth" id="dateOfBirth" onfocusin="focusFunction2()" onfocusout="blurFunction()" onFocus="editText(this.id)" onBlur="normalText(this.id)"/>
+            <input type="text" name="dateOfBirth" id="dateOfBirth" onfocusin="focusFunction4()" onfocusout="blurFunction()" onFocus="editText(this.id)" onBlur="normalText(this.id)"/>
         </label>
     </p>
     <p>
         <label id = "hd">Hire Date:
-            <input type="text" name="hireDate" id="hireDate" onfocusin="focusFunction2()" onfocusout="blurFunction()" onFocus="editText(this.id)" onBlur="normalText(this.id)"/>
+            <input type="text" name="hireDate" id="hireDate" onfocusin="focusFunction5()" onfocusout="blurFunction()" onFocus="editText(this.id)" onBlur="normalText(this.id)"/>
         </label>
     </p>
-
-
-        <label>I Accept Terms And Services
-            <input type="checkbox" name="terms" id="terms"  />
-            <span style="color: red" id="checkbox_error"></span>
-
-        </label>
-    </p>
-
     <p>
         <label><input type="submit" name="submitButton" id="submitButton" value="Submit" /> </label>    <br />
     </p>

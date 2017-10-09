@@ -1,17 +1,24 @@
 function checkForm()
 {
 
-    if(document.forms["myForm"].firstName.value.length ==0)
-    {
-        alert("You must enter a first name");
-        makeRed();
-        TermsandConditions();
+    var ck_name = /^[A-Za-z0-9 ]{3,20}$/;
+    var reg = /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?\s)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?$/;
+    var rxDatePattern = /^(\d{1,2})(\/|-)(\d{1,2})(\/|-)(\d{4})$/;
+    var name = document.forms["myForm"].firstName.value;
+    var lastName = document.forms['myForm'].secondName.value;
+    var dateOfBirth = document.forms['myForm'].dateOfBirth;
+
+
+
+    if (ck_name.test(name) === false){
+        /*debugger;*/
+        alert("Nice Try Nerd")
         return false;
     }
 
 
 
-    else if(document.forms["myForm"].secondName.value.length ==0)
+    else if(ck_name.test(lastName) === false)
     {
 
         alert("You must enter a last name");
@@ -40,55 +47,7 @@ function checkForm()
     }
 }
 
-function first_name() {
-    if(document.forms["myForm"].firstName.value.length ==0){
-        makeRed();
-        return false;
-    }else{
-        document.getElementById("firstName");
-        return true;
-    }
-}
 
-function last_name() {
-    if (document.getElementById("secondName").value==''){
-        makeRed2();
-        return false;
-    }else{
-        document.getElementById("secondName");
-        return true;
-    }
-}
-
-function first_address() {
-    if (document.getElementById("add1").value==''){
-        makeRed3();
-        return false;
-    }else{
-        document.getElementById("add1");
-        return true;
-    }
-}
-
-function second_address() {
-    if (document.getElementById("add2").value==''){
-        makeRed4();
-        return false;
-    }else{
-        document.getElementById("add2");
-        return true;
-    }
-}
-
-function email() {
-    if (document.getElementById("email").value==''){
-        makeRed5();
-        return false;
-    }else{
-        document.getElementById("email");
-        return true;
-    }
-}
 
 function editText(fieldID)
 {
@@ -150,15 +109,15 @@ function makeRed2(){
 }
 
 function makeRed3(){
-    document.getElementById("add1").style.borderColor = "red";
+    document.getElementById("theGender").style.borderColor = "red";
 }
 
 function makeRed4(){
-    document.getElementById("add2").style.borderColor = "red";
+    document.getElementById("dateOfBirth").style.borderColor = "red";
 }
 
 function makeRed5(){
-    document.getElementById("email").style.borderColor = "red";
+    document.getElementById("hireDate").style.borderColor = "red";
 }
 
 
@@ -173,17 +132,17 @@ function makeRight2(){
 }
 
 function makeRight3(){
-    document.getElementById("add1").style.borderColor = "";
+    document.getElementById("theGender").style.borderColor = "";
 
 }
 
 function makeRight4(){
-    document.getElementById("add2").style.borderColor = "";
+    document.getElementById("dateOfBirth").style.borderColor = "";
 
 }
 
 function makeRight5(){
-    document.getElementById("email").style.borderColor = "";
+    document.getElementById("hireDate").style.borderColor = "";
 
 }
 
@@ -196,24 +155,17 @@ function makeRight5(){
 function blurFunction(){
     document.getElementById("firstName").style.background = "";
     document.getElementById("secondName").style.background = "";
-    document.getElementById("add1").style.background = "";
-    document.getElementById("add2").style.background = "";
-    document.getElementById("email").style.background = "";
+    document.getElementById("theGender").style.background = "";
+    document.getElementById("dateOfBirts").style.background = "";
+    document.getElementById("hireDate").style.background = "";
     document.getElementById("first").style.textDecoration = '';
     document.getElementById("last").style.textDecoration = '';
-    document.getElementById("address").style.textDecoration = '';
-    document.getElementById("address2").style.textDecoration = '';
-    document.getElementById("labelEmail").style.textDecoration = '';
+    document.getElementById("gender").style.textDecoration = '';
+    document.getElementById("dob").style.textDecoration = '';
+    document.getElementById("hd").style.textDecoration = '';
 
 }
 
 
-function TermsandConditions() {
-    if (document.getElementById("terms").checked){
-        document.getElementById("checkbox_error").innerHTML = "";
-        return true;
-    }else{
-        document.getElementById("checkbox_error").innerHTML = "Please accept the Terms and Conditions! ";
-        return false;
-    }
-}
+
+

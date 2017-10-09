@@ -21,7 +21,7 @@ if(isset($_POST['loginUser']) && isset($_POST['loginPwd'])){
     if($count == 1){
         $_SESSION['loginUser'] = $loginUser;
         //HTTP HEADER
-        header('location:page1.php');
+        header('location:showEmployees.php');
     }
     else {
         echo "<b> Invalid Login</b><br/>";
