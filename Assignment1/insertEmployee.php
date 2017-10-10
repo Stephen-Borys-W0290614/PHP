@@ -33,8 +33,11 @@ $empNum += 1;
 $sql = "INSERT INTO employees(birth_date, emp_no, first_name, gender, hire_date, last_name) VALUES ('$DOB', '$empNum', '$first', '$gender', '$HD', '$last')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    echo "Affected rows: " . mysqli_affected_rows($conn) ;
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
+
+echo '<a href="http://localhost:8000/Assignment1/showEmployees.php">         Go Back</a>';
+
 ?>
