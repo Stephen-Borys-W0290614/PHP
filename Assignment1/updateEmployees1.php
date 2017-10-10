@@ -1,10 +1,10 @@
 <?php
 require("dbconn.php");
-$first = $_POST['fName'];
-$last = $_POST['lName'];
+$first = $_POST['firstName'];
+$last = $_POST['secondName'];
 $gender = $_POST['gender'];
-$DOB = $_POST['dob'];
-$HD = $_POST['hd'];
+$DOB = $_POST['dateOfBirth'];
+$HD = $_POST['hireDate'];
 $id1 = $_POST['id1'];
 
 
@@ -16,7 +16,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "UPDATE employees SET first_name = '$first', last_name= '$last', gender = '$gender', birth_date = '$DOB', hire_date = '$HD' WHERE emp_no ='$id1'";
+$sql = "UPDATE employees SET birth_date = '$DOB', emp_no= '$id1', first_name = '$first', gender = '$gender', hire_date = '$HD', last_name = '$last' WHERE emp_no ='$id1'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Affected rows: " . mysqli_affected_rows($conn) ;

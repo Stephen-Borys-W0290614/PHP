@@ -1,6 +1,17 @@
 <?php
 require("dbconn.php");
- $num = 0;
+?>
+<?php
+
+// Create connection
+$conn = connectToDatabase();
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+//$empNum = mysqli_query($conn,"SELECT emp_no FROM employees ORDER BY(emp_no) DESC limit 0,1");
+
 ?>
     <!DOCTYPE html>
     <html>
@@ -18,9 +29,9 @@ require("dbconn.php");
     <p><input type="submit" name="Submit" value="Send Form" /></p>
 </form>
 
-<form action="addEmployee.html" method="post">
-    <p>Enter A New Employee: <input type="text" name="search" /></p>
-    <p><input type="submit" name="Submit" value="Send Form" /></p>
+<form action="addEmployee.php" method="post">
+    <p><input type="hidden" name="id" value="<?php echo $empNum ?>"></p>
+    <p>Enter A New Employee <input type="submit" name="Submit" value="Send Form" /></p>
 </form>
 <?php
 $conn = connectToDatabase();
@@ -28,6 +39,34 @@ $conn = connectToDatabase();
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+?>
+
+<?php
+
+    session_start();
+    if (isset($_POST['Next'])) {
+        $_SESSION['num'] += 25;
+    }
+    else
+    {
+        $_SESSION['num']+= 0;
+    }
+    if (isset($_POST['Previous'])) {
+        if ($_SESSION['num'] == 0) {
+            $_SESSION['num'] == 25;
+        } else {
+            $_SESSION['num'] -= 25;
+        }
+    }
+
+
+$num = $_SESSION['num'];
+
+    if (isset($_POST['End'])) {
+        session_abort();
+        $num = 0;
+    }
+
 ?>
 
 
@@ -101,11 +140,18 @@ while ($row = mysqli_fetch_assoc($result)): ?>
     <?php
 endwhile;
 
-$num += 25;
+
 ?>
 
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-    <p><input type="submit" name="Submit" value="Next" /></p>
+<form action="showEmployees.php" method="post">
+    <p><input type="submit" name="Next" value="Next" /></p>
 </form>
 
+<form action="showEmployees.php" method="post">
+    <p><input type="submit" name="Previous" value="Previous" /></p>
+</form>
+
+<form action="showEmployees.php" method="post">
+    <p><input type="submit" name="End" value="Return To First Page" /></p>
+</form>
 

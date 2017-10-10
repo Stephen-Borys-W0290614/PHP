@@ -1,3 +1,7 @@
+<?php
+require("dbconn.php");
+$result = ($_POST['id']);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +9,8 @@
     <script src="check.js" type="text/javascript"></script>
 </head>
 <body>
+
+
 <form id="myForm" name="myForm" method="post" action="insertEmployee.php" onsubmit="return checkForm()">
     <p>
         <label id = "first">First Name:
@@ -34,8 +40,15 @@
         </label>
     </p>
     <p>
+        <input type="hidden" name="id" value="<?php echo $result ?>">
+    </p>
+    <p>
         <label><input type="submit" name="submitButton" id="submitButton" value="Submit" /> </label>    <br />
     </p>
+
 </form>
+
+
 </body>
 </html>
+

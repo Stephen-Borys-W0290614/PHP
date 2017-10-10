@@ -5,6 +5,7 @@ $last = ($_POST['secondName']);
 $gender = ($_POST['gender']);
 $DOB = ($_POST['dateOfBirth']);
 $HD = ($_POST['hireDate']);
+$empNum = ($_POST['id']);
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -25,8 +26,6 @@ $conn = connectToDatabase();
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-$empNum = "SELECT emp_no FROM employees ORDER BY(emp_no) DESC limit 0,1";
 
 $empNum += 1;
 
