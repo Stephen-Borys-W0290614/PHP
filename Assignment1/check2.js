@@ -16,7 +16,7 @@ function checkForm()
         debugger;
         document.getElementById("first_name_error").innerHTML = "Please enter a Valid First Name ";
         makeRed();
-       return false;
+        return false;
     }
 
 

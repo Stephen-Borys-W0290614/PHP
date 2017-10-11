@@ -1,5 +1,6 @@
 <?php
 require("dbconn.php");
+$stick = ($_POST['stick'])
 ?>
 <?php
 
@@ -25,7 +26,7 @@ if ($conn->connect_error) {
     </head>
 <body>
 <form action="searchEmployee.php" method="post">
-    <p>Search For Employees: <input type="text" name="search" /></p>
+    <p>Search For Employees: <input type="text" name="search" value"<?php echo $stick ?> /></p>
     <p><input type="submit" name="Submit" value="Send Form" /></p>
 </form>
 

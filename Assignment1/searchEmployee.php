@@ -1,12 +1,13 @@
 <?php
 require("dbconn.php");
-$search = ($_POST['search'])
+$search = ($_POST['search']);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Films In Sakila</title>
+    <title>Employee Search</title>
     <style>
         table {border-collapse:border}
         th, tr, td {border:solid 2px red}
@@ -67,9 +68,21 @@ while ($row = mysqli_fetch_assoc($result)): ?>
             <?php echo $row['hire_date'];?>
         </td>
     </tr>
+
         <?php
     endwhile;
     ?>
+</tbody>
+</table>
+<form action="searchEmployee.php" method="post">
+    <p><input type="text" name="search" id = "search" value="<?php echo $search ?>"></p>
+    <p>Search For Employee: <input type="submit" name="Submit" value="Send Form" /></p>
+</form>
+<form action="showEmployees.php" method="post">
+    <p>Go Back To First Page <input type="submit" name="Submit" value="Send Form" /></p>
+</form>
+</body>
+
 
 
 

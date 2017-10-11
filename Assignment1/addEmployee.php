@@ -19,7 +19,7 @@ $empNum = mysqli_fetch_array(mysqli_query($conn,"SELECT emp_no FROM employees OR
 
 ?>
 
-<script src="check.js" type="text/javascript"></script>
+<script src="check2.js" type="text/javascript"></script>
 <form id="myForm" name="myForm" method="post" action="insertEmployee.php" onsubmit="return checkForm()">
     <p>
         <label id = "first">First Name:
