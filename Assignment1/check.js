@@ -1,6 +1,6 @@
 function checkForm()
 {
-
+    var test_name = /^[A-Z]([A-Z]|[a-z]|[0-9]){5,24}$/;   //Got code for regex from various sources
     var ck_name = /^[A-Za-z0-9 ]{3,20}$/;
     var reg = /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?\s)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?$/;
     var rxDatePattern = /^\d{4}-\d{2}-\d{2}$/;
@@ -12,46 +12,47 @@ function checkForm()
 
 
 
-    if (ck_name.test(name) === false){
-        /*debugger;*/
-        alert("You must enter a valid first name")
+    if (test_name.test(name) === false){
+        debugger;
+        document.getElementById("first_name_error").innerHTML = "Please enter a Valid First Name ";
         makeRed();
-        return false;
+       return false;
     }
 
 
 
-    else if(ck_name.test(lastName) === false)
+    else if(test_name.test(lastName) === false)
     {
 
-        alert("You must enter a valid last name");
-
+        document.getElementById("last_name_error").innerHTML = "Please enter a Valid First Name ";
         makeRed2();
         makeRight();
         return false;
     }
     else if(document.forms["myForm"].gender.selectedIndex ==0)
     {
-        alert("You must choose a gender");
+        document.getElementById("gender_error").innerHTML = "Please enter a Valid First Name ";
         makeRight();
         makeRight2();
         return false;
     }
 
     else if(rxDatePattern.test(birthDate) === false){
-        alert("You must enter a valid birth date");
+        document.getElementById("date_birth_error").innerHTML = "Please enter a Valid First Name ";
         makeRed4();
         makeRight();
         makeRight2();
+        makeRight3();
         return false;
     }
 
 
     else if (rxDatePattern.test(hireDate) === false){
-        alert("You must enter a valid hire date");
+        document.getElementById("date_hire_error").innerHTML = "Please enter a Valid First Name ";
         makeRed5();
         makeRight();
         makeRight2();
+        makeRight3();
         makeRight4();
         return false;
     }
@@ -131,22 +132,31 @@ function makeRed5(){
 
 function makeRight(){
     document.getElementById("firstName").style.borderColor = "";
+    document.getElementById("first_name_error").innerHTML = "";
 
 }
 
 function makeRight2(){
     document.getElementById("secondName").style.borderColor = "";
+    document.getElementById("last_name_error").innerHTML = "";
+
+}
+
+function makeRight3(){
+    document.getElementById("gender_error").innerHTML = "";
 
 }
 
 
 function makeRight4(){
     document.getElementById("dateOfBirth").style.borderColor = "";
-
+    document.getElementById("date_birth_error").innerHTML = "";
 }
 
 function makeRight5(){
     document.getElementById("hireDate").style.borderColor = "";
+    document.getElementById("date_hire_error").innerHTML = "";
+
 
 }
 
@@ -167,6 +177,22 @@ function blurFunction(){
     document.getElementById("hd").style.textDecoration = '';
 
 }
+
+function firstNameError()
+{
+    var test_name = /^[A-Z]([A-Z]|[a-z]|[0-9]){5,24}$/;   //Got code for regex from various sources
+    var name = document.forms["myForm"].firstName.value;
+
+    if (test_name.test(name) === true){
+        document.getElementById("first_name_error").innerHTML = "";
+        return true;
+    }
+    else{
+        document.getElementById("first_name_error").innerHTML = "Please enter a Valid First Name ";
+        return false;
+    }
+}
+
 
 
 

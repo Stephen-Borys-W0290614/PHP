@@ -157,7 +157,7 @@ function focusFunction() {
 }
 
 function focusFunction2() {
-    document.getElementById("secondName").style.background = "yellow";
+    document.getElementById("secondNaGme").style.background = "yellow";
     document.getElementById("last").style.textDecoration = 'underline';
 
 
@@ -246,7 +246,17 @@ function blurFunction(){
     document.getElementById("labelEmail").style.textDecoration = '';
 
 }
-
+function firstNameError()
+{
+    if (ck_name.test(name) === true) {
+        document.getElementById("first_name_error").innerHTML = "";
+        return true;
+    }
+    else{
+        document.getElementById("first_name_error").innerHTML = "Please accept the Terms and Conditions! ";
+        return false;
+    }
+}
 
 function TermsandConditions() {
     if (document.getElementById("terms").checked){

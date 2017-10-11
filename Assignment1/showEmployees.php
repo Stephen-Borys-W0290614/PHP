@@ -17,7 +17,7 @@ if ($conn->connect_error) {
     <html>
     <head lang="en">
         <meta charset="UTF-8">
-        <title>Lab 3 Part B</title>
+        <title>Assignment 1</title>
         <style>
             table {border-collapse:border}
             th, tr, td {border:solid 2px red}
