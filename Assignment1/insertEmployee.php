@@ -5,7 +5,7 @@ $last = ($_POST['secondName']);
 $gender = ($_POST['gender']);
 $DOB = ($_POST['dateOfBirth']);
 $HD = ($_POST['hireDate']);
-$empNum = ($_POST['id']);
+$empNum = ($_POST['empID']);
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -27,7 +27,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$empNum += 1;
+
+
+
 
 $sql = "INSERT INTO employees(birth_date, emp_no, first_name, gender, hire_date, last_name) VALUES ('$DOB', '$empNum', '$first', '$gender', '$HD', '$last')";
 

@@ -1,6 +1,16 @@
 <?php
 require("dbconn.php");
 $result = ($_POST['id']);
+// Create connection
+$conn = connectToDatabase();
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$empNum = mysqli_fetch_array(mysqli_query($conn,"SELECT emp_no FROM employees ORDER BY emp_no DESC LIMIT 1"));
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,7 +50,9 @@ $result = ($_POST['id']);
         </label>
     </p>
     <p>
-        <input type="hidden" name="id" value="<?php echo $result ?>">
+        <input type="hidden" name="empID" id="empID" value="<?php echo $empNum[0]+1 ?>" readonly/>
+
+
     </p>
     <p>
         <label><input type="submit" name="submitButton" id="submitButton" value="Submit" /> </label>    <br />
