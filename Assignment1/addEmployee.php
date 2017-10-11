@@ -7,6 +7,8 @@
 <body>
 <?php
 require("dbconn.php");
+require 'isLoggedIn.php';
+checkIfLoggedIn();
 // Create connection
 $conn = connectToDatabase();
 // Check connection

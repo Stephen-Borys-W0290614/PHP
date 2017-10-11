@@ -1,6 +1,6 @@
 <?php
-/*require 'isLoggedIn.php';
-checkIfLoggedIn();*/
+require 'isLoggedIn.php';
+checkIfLoggedIn();
 ?>
 <!DOCTYPE html>
 <html lang="en">

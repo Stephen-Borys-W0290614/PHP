@@ -5,7 +5,7 @@ $db = mysqli_connect("localhost", "root", "inet2005", "test");
 if(!$db){
     die ('could not connect to test database ' . mysqli_connect_error());
 }
-
+$_SESSION['loginUser'] = "";
 if(isset($_POST['loginUser']) && isset($_POST['loginPwd'])){
     $loginUser = $_POST['loginUser'];
     $loginPwd = $_POST['loginPwd'];
@@ -25,6 +25,7 @@ if(isset($_POST['loginUser']) && isset($_POST['loginPwd'])){
     }
     else {
         echo "<b> Invalid Login</b><br/>";
+        $_SESSION['loginUser'] = "";
         echo "<a href=\"mainLogin.html\">Try Again</a>";
     }
 }

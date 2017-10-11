@@ -1,5 +1,7 @@
 <?php
 require("dbconn.php");
+require 'isLoggedIn.php';
+checkIfLoggedIn();
 $search = ($_POST['search']);
 
 ?>

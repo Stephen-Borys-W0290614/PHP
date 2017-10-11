@@ -1,5 +1,7 @@
 <?php
 require("dbconn.php");
+require 'isLoggedIn.php';
+checkIfLoggedIn();
 $stick = ($_POST['stick'])
 ?>
 <?php

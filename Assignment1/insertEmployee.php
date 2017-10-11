@@ -1,5 +1,7 @@
 <?php
 require("dbconn.php");
+require 'isLoggedIn.php';
+checkIfLoggedIn();
 $first = ($_POST['firstName']);
 $last = ($_POST['secondName']);
 $gender = ($_POST['gender']);

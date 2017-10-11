@@ -25,6 +25,7 @@ if(isset($_POST['loginUser']) && isset($_POST['loginPwd'])){
     }
     else {
         echo "<b> Invalid Login</b><br/>";
+        $_SESSION['loginUser'] = "";
         echo "<a href=\"mainLogin.html\">Try Again</a>";
     }
 }
