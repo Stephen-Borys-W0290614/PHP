@@ -64,7 +64,9 @@ $empNum = mysqli_fetch_array(mysqli_query($conn,"SELECT emp_no FROM employees OR
     </p>
 </form>
 
-
+<form action="showEmployees.php" method="post">
+    <p>Go Back To First Page <input type="submit" name="Submit" value="Send Form" /></p>
+</form>
 </body>
 <?php
 mysqli_close($conn);

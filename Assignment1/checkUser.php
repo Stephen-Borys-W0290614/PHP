@@ -18,8 +18,9 @@ if(isset($_POST['loginUser']) && isset($_POST['loginPwd'])){
     $loginPwd = stripslashes($loginPwd);
     $loginUser = mysqli_real_escape_string($conn, $loginUser);
     $loginPwd = mysqli_real_escape_string($conn, $loginPwd);
-    $sql = "SELECT * FROM members WHERE username ='$loginUser'";
-    $sql.= " and password = '$loginPwd';";
+    $loginPwd = hash("sha512", $loginPwd);
+    $sql = "SELECT * FROM accounts WHERE username ='$loginUser';";
+    //$sql.= " and password = '$loginPwd';";
     $result = mysqli_query($conn, $sql);
     $count = mysqli_num_rows($result);
 
@@ -32,7 +33,7 @@ if(isset($_POST['loginUser']) && isset($_POST['loginPwd'])){
         echo "<a href=\"createUser1.html\">Try Again</a>";
 
     } else {
-        $sql2 = "INSERT INTO members(username,password) VALUES ('$loginUser', '$loginPwd')";
+        $sql2 = "INSERT INTO accounts (username, password) VALUES ('$loginUser', sha2('$loginPwd', 512))";
 
         echo "<a>User Created</a><br/>";
 

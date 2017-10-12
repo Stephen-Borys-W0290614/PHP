@@ -83,8 +83,12 @@ while ($row = mysqli_fetch_assoc($result)): ?>
 <form action="showEmployees.php" method="post">
     <p>Go Back To First Page <input type="submit" name="Submit" value="Send Form" /></p>
 </form>
-</body>
+<form action="logout.php" method="post">
+    <p><input type="submit" name="End" value="Log Out" /></p>
+</form>
 
+</body>
+</html>
 
 
 

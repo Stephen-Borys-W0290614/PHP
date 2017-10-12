@@ -145,6 +145,8 @@ endwhile;
 
 
 ?>
+    </tbody>
+</table>
 
 <form action="showEmployees.php" method="post">
     <p><input type="submit" name="Next" value="Next" /></p>
@@ -158,3 +160,10 @@ endwhile;
     <p><input type="submit" name="End" value="Return To First Page" /></p>
 </form>
 
+<form action="logout.php" method="post">
+    <p><input type="submit" name="End" value="Log Out" /></p>
+</form>
+
+
+</body>
+</html>

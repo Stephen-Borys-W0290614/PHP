@@ -77,6 +77,9 @@ $result = mysqli_query($conn,"SELECT * FROM employees WHERE emp_no = '$id'")->fe
 </form>
 
 
+<form action="logout.php" method="post">
+    <p><input type="submit" name="End" value="Log Out" /></p>
+</form>
 
 
 </body>
