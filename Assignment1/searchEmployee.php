@@ -69,6 +69,18 @@ while ($row = mysqli_fetch_assoc($result)): ?>
         <td>
             <?php echo $row['hire_date'];?>
         </td>
+        <td>
+            <form action="updateEmployees.php" method="post">
+                <p> <input type="hidden" name="id" value="<?php echo $row['emp_no'] ?>">
+                <p><input type="submit" name="Submit" value="Update" /></p>
+            </form>
+        </td>
+        <td>
+            <form action="deleteEmployees.php" method="post">
+                <p> <input type="hidden" name="id" value="<?php echo $row['emp_no'] ?>">
+                <p><input type="submit" name="Submit" value="Delete" /></p>
+            </form>
+        </td>
     </tr>
 
         <?php

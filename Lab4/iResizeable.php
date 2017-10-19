@@ -5,8 +5,8 @@
  * and open the template in the editor.
  */
 
-interface iCrashable
+interface iResizeable
 {
-    public function runIntoTree($intA);
+    public function reSize();
 }
 ?>

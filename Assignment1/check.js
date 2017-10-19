@@ -1,5 +1,6 @@
 function checkForm()
 {
+    var edit = /^[0-9]%$/;
     var test_name = /^[A-Z]([A-Z]|[a-z]|[0-9]){5,24}$/;   //Got code for regex from various sources
     var ck_name = /^[A-Za-z0-9 ]{3,20}$/;
     var reg = /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?\s)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?$/;
@@ -21,7 +22,7 @@ function checkForm()
 
 
 
-    else if(test_name.test(lastName) === false)
+    else if(ck_name.test(lastName) === false)
     {
 
         document.getElementById("last_name_error").innerHTML = "Please enter a Valid Last Name ";
@@ -37,7 +38,7 @@ function checkForm()
         return false;
     }
 
-    else if(rxDatePattern.test(birthDate) === false){
+    else if(edit.test(birthDate) === false){
         document.getElementById("date_birth_error").innerHTML = "Please enter a Valid Date Of Birth ";
         makeRed4();
         makeRight();

@@ -18,7 +18,6 @@ if(isset($_POST['loginUser']) && isset($_POST['loginPwd'])){
     $loginPwd = stripslashes($loginPwd);
     $loginUser = mysqli_real_escape_string($conn, $loginUser);
     $loginPwd = mysqli_real_escape_string($conn, $loginPwd);
-    $loginPwd = hash("sha512", $loginPwd);
     $sql = "SELECT * FROM accounts WHERE username ='$loginUser';";
     //$sql.= " and password = '$loginPwd';";
     $result = mysqli_query($conn, $sql);

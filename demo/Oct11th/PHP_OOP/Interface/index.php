@@ -11,11 +11,16 @@ and open the template in the editor.
     <body>
         <?php
         include_once("SportsCar.php");
+        include_once("Lada.php");
 
         $mySportsCar = new SportsCar("Ferrari","Mike",5,true);
         echo "<h1>" . $mySportsCar->driveFiftyMiles() . "</h1>";
         echo "<h1>Current Mileage: " . $mySportsCar->getMileage() . "</h1>";
         echo "<h1>" . $mySportsCar->runIntoTree() . "</h1>";
+        $myRealCar = new Lada("Skoda","Stephen",300000,true);
+        echo "<h1>" . $myRealCar->driveFiftyMiles() . "</h1>";
+        echo "<h1>Current Mileage: " . $myRealCar->getMileage() . "</h1>";
+        echo "<h1>" . $myRealCar->runIntoTree() . "</h1>";
         ?>
     </body>
 </html>

@@ -4,9 +4,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
-interface iCrashable
-{
-    public function runIntoTree($intA);
-}
+ session_start();
+ session_destroy();
+ header("location:mainLogin.html");
 ?>

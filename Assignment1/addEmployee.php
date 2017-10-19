@@ -22,7 +22,7 @@ $empNum = mysqli_fetch_array(mysqli_query($conn,"SELECT emp_no FROM employees OR
 ?>
 
 <script src="check2.js" type="text/javascript"></script>
-<form id="myForm" name="myForm" method="post" action="insertEmployee.php" onsubmit="return checkForm()">
+<form id="myForm" name="myForm" method="post" action="insertEmployee.php" onsubmit="">
     <p>
         <label id = "first">First Name:
             <input type="text" name="firstName" id="firstName" onfocusin="focusFunction()" onfocusout="blurFunction()" onFocus="editText(this.id)" onBlur="normalText(this.id)" />
@@ -31,7 +31,7 @@ $empNum = mysqli_fetch_array(mysqli_query($conn,"SELECT emp_no FROM employees OR
     </p>
     <p>
         <label id = "last">Last Name:
-            <input type="text" name="secondName" id="secondName" onfocusin="focusFunction2()" onfocusout="blurFunction()" onFocus="editText(this.id)" onBlur="normalText(this.id)" />
+            <input type="text" name="secondName" id="secondName" onfocusin="focusFunction2()"  onFocus="editText(this.id)" onBlur="normalText(this.id)" />
             <span style="color: red" id="last_name_error"></span>
         </label>
     </p>

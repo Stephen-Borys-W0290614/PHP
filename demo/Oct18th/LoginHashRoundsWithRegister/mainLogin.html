@@ -1,0 +1,36 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Member Login </h1>
+        <form name="form1" method="post" action="checkLogin.php">
+            <table>
+                <tr>
+                    <td>
+                        <label for="loginUser">User:</label>
+                    </td>
+                    <td>
+                        <input name="loginUser" type="text" id="loginUser"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="loginPwd">Password:</label>
+                    </td>
+                    <td>
+                        <input name="loginPwd" type="password" id="loginPwd"/>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" name="Submit" value="Login"/>
+            <a href="newUser.html">New user? Please register.</a>
+        </form>
+    </body>
+</html>

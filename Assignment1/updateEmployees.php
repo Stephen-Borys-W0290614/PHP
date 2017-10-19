@@ -34,7 +34,7 @@ $result = mysqli_query($conn,"SELECT * FROM employees WHERE emp_no = '$id'")->fe
     <p> <input type="hidden" name="id1" value="<?php echo $id ?>">
     <p><input type="submit" name="Submit" value="Send Form" /></p>
 </form>-->
-<script src="check.js" type="text/javascript"></script>
+<script src="check2.js" type="text/javascript"></script>
 <form id="myForm" name="myForm" method="post" action="updateEmployees1.php" onsubmit="return checkForm()">
     <p>
         <label id = "first">First Name:
