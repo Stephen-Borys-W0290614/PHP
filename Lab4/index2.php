@@ -1,6 +1,7 @@
-<!--
+<!--I workeed with my friend Phil on this lab
 To change this template, choose Tools | Templates
 and open the template in the editor.
+I also had help from Ed
 -->
 <?php
 //$radius = ($_POST['r']);

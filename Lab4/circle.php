@@ -37,7 +37,7 @@ class circle extends shape implements iResizeable
         else{
             if($this->sizeEdit == 100 || $this->sizeEdit == ""){
                 $this->circle_Area = (round(3.14159 * ($this->radius * $this->radius), 2));
-                $newArea = $this->area;
+                $newArea = $this->circle_Area;
                 $newArea = round($newArea, 2);
                 return ($newArea);
             }

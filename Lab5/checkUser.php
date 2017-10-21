@@ -1,5 +1,7 @@
 <?php
 require("dbconn2.php");
+require 'isLoggedIn.php';
+checkIfLoggedIn();
 session_start();
 ob_start();
 // Create connection
@@ -29,7 +31,7 @@ if(isset($_POST['loginUser']) && isset($_POST['loginPwd'])){
         //HTTP HEADER
         echo "<b> User already created</b><br/>";
         //header('location:mainLogin.html');
-        echo "<a href=\"createUser2.php\">Try Again</a>";
+        echo ">Try Again</a>";
 
     } else {
         $sql2 = "INSERT INTO accounts (username, password) VALUES ('$loginUser', sha2('$loginPwd', 512))";
