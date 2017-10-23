@@ -1,7 +1,7 @@
 <?php
 session_start();
 ob_start();
-$db = mysqli_connect("localhost", "root", "inet2005", "test");
+$db = mysqli_connect("localhost", "minAccess", "itCampus2017", "employees");
 if(!$db){
     die ('could not connect to test database ' . mysqli_connect_error());
 }
@@ -14,8 +14,17 @@ if(isset($_POST['loginUser']) && isset($_POST['loginPwd'])){
     $loginUser = mysqli_real_escape_string($db, $loginUser);
     $loginPwd = mysqli_real_escape_string($db, $loginPwd);
     $loginPwd = hash("sha512", $loginPwd);
-    $sql = "SELECT * FROM accounts WHERE username ='$loginUser'";
-    $sql.= " and password = '$loginPwd';";
+
+    $unixSeconds = time();
+    $loginSeconds = substr($loginUser, 0,16 - strlen($unixSeconds));
+    $userSalt = $loginSeconds . $unixSeconds;
+    //This code was to make a unique salt for users
+    $cryptPre = '$6$rounds=5000$' . $userSalt . '$';
+    $passwordHashPre = crypt($loginPwd, $cryptPre);
+    $cryptPreEscape = '\$6\$rounds=5000\$' . $userSalt .'\$';
+    $passwordHash = preg_replace('/^' . $cryptPreEscape . '/', '',$passwordHashPre);
+    $sql = "SELECT * FROM WebUsers WHERE user_name ='$loginUser'";
+    $sql.= " and user_pwd = '$loginPwd';";
     $result = mysqli_query($db, $sql);
     $count = mysqli_num_rows($result);
     mysqli_close($db);

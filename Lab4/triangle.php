@@ -16,8 +16,9 @@ class triangle extends shape implements iResizeable
     protected $newArea;
     public $newHeight;
 
-    public function __construct($in_base, $in_height, $in_area, $in_size_edit)
+    public function __construct($in_name, $in_base, $in_height, $in_area, $in_size_edit)
     {
+        parent::__construct( $in_name);
         $this->base = $in_base;
         $this->height = $in_height;
         $this->area = $in_area;
@@ -65,12 +66,10 @@ class triangle extends shape implements iResizeable
     {
         if ($this->sizeEdit == 100 || $this->sizeEdit == null)
         {
-//            $this->newR = sqrt($this->area / M_PI);
             return round($this->height, 3, PHP_ROUND_HALF_DOWN);
         }
         else
         {
-//            $this->newR = sqrt($this->newArea / M_PI);
             $this->newHeight = ($this->newArea * 2) / $this->base;
             return round($this->newHeight, 3, PHP_ROUND_HALF_DOWN);
         }

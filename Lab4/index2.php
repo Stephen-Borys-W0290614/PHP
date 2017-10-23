@@ -23,7 +23,7 @@ $myCircle = new circle("circle", $_POST['r'],0,$_POST['sizeEdit']);
 $myRectangle = new rectangle("rectangle", $_POST['l'] , $_POST['w'],0);
 
 
-$myTriangle = new triangle($_POST['b'], $_POST['h'],0,$_POST['sizeEdit']);
+$myTriangle = new triangle("triangle",$_POST['b'], $_POST['h'],0,$_POST['sizeEdit']);
 
 
 $myCircle->CalculateArea();
