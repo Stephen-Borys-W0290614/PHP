@@ -2,7 +2,6 @@
 require("dbconn.php");
 require 'isLoggedIn.php';
 checkIfLoggedIn();
-$stick = ($_POST['stick'])
 ?>
 <?php
 
@@ -33,7 +32,7 @@ if ($conn->connect_error) {
     </p>
 </form>
 <form action="searchEmployee.php" method="post">
-    <p>Search For Employees: <input type="text" name="search" value"<?php echo $stick ?> /></p>
+    <p>Search For Employees: <input type="text" name="search" </p>
     <p><input type="submit" name="Submit" value="Send Form" /></p>
 </form>
 

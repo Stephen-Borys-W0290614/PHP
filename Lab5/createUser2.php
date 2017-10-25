@@ -1,6 +1,6 @@
 <?php
 require 'isLoggedIn.php';
-//checkIfLoggedIn();
+checkIfLoggedIn();
 ?>
 <!DOCTYPE html>
 <html lang="en">

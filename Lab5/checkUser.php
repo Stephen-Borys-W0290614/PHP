@@ -19,67 +19,75 @@ if ($conn->connect_error) {
                 $_POST["recaptcha_response_field"]);
 
 
+
 if (!$resp->is_valid)
 {
     // What happens when the CAPTCHA was entered incorrectly
     echo "<h1>Incorrect Captcha entry.Try again?</h1>";
     echo "<a href='createUser2.php'>Back to New User Form</a>";
 }
-else {
+else
+{
+    // Should probably be checking password complexity and match server side as well!!!!
 
+    $loginUser = ($_POST['loginUser']);
+    $loginPwd = ($_POST['loginPwd']);
 
-    if (isset($_POST['loginUser']) && isset($_POST['loginPwd'])) {
-        $loginUser = $_POST['loginUser'];
-        $loginPwd = $_POST['loginPwd'];
-        $loginUser = stripslashes($loginUser);
-        $loginPwd = stripslashes($loginPwd);
-        $loginUser = mysqli_real_escape_string($conn, $loginUser);
-        $loginPwd = mysqli_real_escape_string($conn, $loginPwd);
-        //----CODE BLOCK START-----
-        $unixSeconds = time();
-        $loginSeconds = substr($loginUser, 0,16 - strlen($unixSeconds));
-        $userSalt = $loginSeconds . $unixSeconds;
-        //This code was to make a unique salt for users
-        $cryptPre = '$6$rounds=5000$' . $userSalt . '$';
-        $passwordHashPre = crypt($loginPwd, $cryptPre);
-        $cryptPreEscape = '\$6\$rounds=5000\$' . $userSalt .'\$';
-        $passwordHash = preg_replace('/^' . $cryptPreEscape . '/', '',$passwordHashPre);
-        $sql = "SELECT * FROM WebUsers WHERE user_name ='$loginUser';";
-        //$sql.= " and password = '$loginPwd';";
-        $result = mysqli_query($conn, $sql);
-        $count = mysqli_num_rows($result);
+    $loginUser = mysqli_real_escape_string($conn,$loginUser);
+    $loginPwd = mysqli_real_escape_string($conn,$loginPwd);
 
+    // create a salt based on the number of seconds since
+    // the Unix Epoch (January 1 1970 00:00:00 GMT).
+    $secondsSinceUnixEpoch = time();
+    $truncatedUserName = substr($loginUser, 0, 16 - strlen($secondsSinceUnixEpoch));
+    //create a 16 character long salt by truncating the username and appending the timestamp to equal
+    // 16 in length
+    $userSalt = $truncatedUserName . $secondsSinceUnixEpoch;
 
-        if ($count == 1) {
+    // now create the hash using the PHP crypt function
+    // example: crypt('rasmuslerdorf', '$6$rounds=5000$usesomesillystringforsalt$')
+    // the "6" indicates SHA512, the "5000" indicates the rounds of hashing to do
+    $cryptPrefix = '$6$rounds=5000$' . $userSalt .'$';
+    $passwordHashRaw = crypt($loginPwd, $cryptPrefix);
 
-            //HTTP HEADER
-            echo "<b> User already created</b><br/>";
-            //header('location:mainLogin.html');
-            echo ">Try Again</a>";
+    //Necessary because I cannot abide storing the HASH type
+    //and rounds of hashing in the hash string
+    $cryptPrefixEscaped = '\$6\$rounds=5000\$' . $userSalt . '\$';
+    $passwordHash = preg_replace('/^' . $cryptPrefixEscaped . '/','',$passwordHashRaw);
 
-        } else {
-            $sql2 = "INSERT INTO WebUsers (user_name, user_pwd, salt) VALUES ('$loginUser', sha2('$loginPwd', 512), '$userSalt')";
+    // insert the new user with hash & salt
+    $sqlStatement = "INSERT INTO WebUsers(user_name,user_pwd,salt) VALUES ('";
+    $sqlStatement .= $loginUser;
+    $sqlStatement .= "','";
+    $sqlStatement .= $passwordHash;
+    $sqlStatement .= "','";
+    $sqlStatement .= $userSalt;
+    $sqlStatement .= "');";
 
-            echo "<a>User Created</a><br/>";
+    $result = mysqli_query($conn,$sqlStatement);
 
-            if ($conn->query($sql2) === TRUE) {
-                echo "Affected rows: " . mysqli_affected_rows($conn);
-                echo "<a href=\"mainLogin.html\">Go Back to Login</a>";
-                //die("Unable to create user: " . mysqli_error($conn));
-
-
-            } else {
-                //echo "Error: " . $sql2 . "<br>" . $conn->error;
-                die("Unable to create user: " . mysqli_error($conn));
-                echo "<a href=\"mainLogin.html\">Go Back to Login</a>";
-
-
-            }
-
-        }
-        mysqli_close($db);
+    if(!$result)
+    {
+        die("Unable to create user: " . mysqli_error($conn));
     }
 
+    $count= mysqli_affected_rows($conn);
 
+    if($count==-1)
+    {
+        echo "<h1>The user was added.</h1>";
+        echo "<a href='mainLogin.html'>Go to Login?</a>";
+    }
+    else
+    {
+        echo "<h1>Sorry the user could not be added.</h1>";
+        echo "<a href='createUser2.php'>Back to New User Form</a>";
+    }
 }
-ob_end_flush();
+
+?>
+</section>
+<footer>
+</footer>
+</body>
+</html>

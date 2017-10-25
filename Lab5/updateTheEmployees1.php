@@ -13,13 +13,13 @@ $id1 = $_POST['id1'];
 
 // Create connection
 $conn = connectToDatabase();
-//$DOB = stripslashes($DOB);
+$DOB = stripslashes($DOB);
 $DOB = mysqli_real_escape_string($conn, $DOB);
 $first = stripslashes($first);
 $first = mysqli_real_escape_string($conn, $first);
 $gender = stripslashes($gender);
 $gender = mysqli_real_escape_string($conn, $gender);
-//$HD = stripslashes($HD);
+$HD = stripslashes($HD);
 $HD = mysqli_real_escape_string($conn, $HD);
 $last = stripslashes($last);
 $last = mysqli_real_escape_string($conn, $last);

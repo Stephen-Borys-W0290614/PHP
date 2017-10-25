@@ -8,7 +8,7 @@ class Customer
     private $m_firstName;
     private $m_lastName;
     private $m_address;
-    
+
     
     public function __construct($in_id,$in_fname,$in_lname,$in_address)
     {

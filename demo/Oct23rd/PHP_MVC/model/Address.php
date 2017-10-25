@@ -13,7 +13,7 @@ class Address
         $this->m_address = $in_address;
         $this->m_address2 = $in_address2;
     }
-    
+
     public function getID()
     {
         return ($this->m_addressId);
