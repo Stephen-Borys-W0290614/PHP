@@ -123,6 +123,46 @@ class FilmModel
         return $fetchedCustomer;
     }
 
+    public function getSearchedCustomer($name){
+
+        $this->m_DataAccess->connectToDB();
+
+        //execute the query to retrieve the specific customer
+        //record by id.
+        $this->m_DataAccess->selectCustomerByName($name);
+        //we only need to call fetch customer once
+        //because there should only be one record to return
+        //because we queried by ID
+        $arrayOfActor = array();
+        $record =  $this->m_DataAccess->fetchActor();
+
+        //build the customer object with all of the data
+        //that was retrieved from the fetched record....
+        //this will include both customer and address data
+        //create a new address object and fill with address data from the db record
+
+        //create a new customer object and fill with customer data from
+        //the db record and also include the newly created address
+        //object created just above
+        while($FilmRow = $this->m_DataAccess->fetchActor()) {
+
+            $fetchedCustomer = new Films($this->m_DataAccess->fetchActorID($FilmRow),
+                $this->m_DataAccess->fetchActorFName($FilmRow),
+                $this->m_DataAccess->fetchActorLName($FilmRow),
+                $this->m_DataAccess->fetchActorLastUpdate($FilmRow));
+
+            $arrayOfActor[] = $fetchedCustomer;
+
+        }
+
+        $this->m_DataAccess->closeDB();
+
+        //return the created customer object containing all the customer
+        //and address data back to the calling function in the controller
+        return $arrayOfActor;
+
+    }
+
     //receives the newly updated customer object from the controller
     //the data is then extracted and sent to the db's updateCustomer
     //in order to save the updates in the database
@@ -137,6 +177,20 @@ class FilmModel
         $recordsAffected = $this->m_DataAccess->updateCustomer($customerToUpdate->getID(),
                 $customerToUpdate->getFName(),
                 $customerToUpdate->getLName());
+
+        //return message describing the result of update
+        return "$recordsAffected record(s) updated succesfully!";
+    }
+
+    public function deleteCustomer($customerToUpdate)
+    {
+        $this->m_DataAccess->connectToDB();
+
+        //pass along the newly updated customer object to the
+        //data layer's updateCustomer function so that it can
+        //go ahead and perform an UPDATE statement with the new data
+        //if the update was successful, the $recordsAffected should be set to 1
+        $recordsAffected = $this->m_DataAccess->deleteCustomer($customerToUpdate->getID());
 
         //return message describing the result of update
         return "$recordsAffected record(s) updated succesfully!";

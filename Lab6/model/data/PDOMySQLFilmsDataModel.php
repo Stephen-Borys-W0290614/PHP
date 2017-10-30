@@ -92,6 +92,29 @@ class PDOMySQLFilmsDataModel implements iFilmDataModel
         }
     }
 
+    public function selectCustomerByName($name)
+    {
+        //build select statment with WHERE clause to get
+        //specific customer from db
+        //note the :custID parameter placeholder...this is PDO-specific
+        $selectStatement = "SELECT * FROM actor";
+        $selectStatement .= " WHERE first_name = :name;";
+
+        try
+        {
+            //prepare the statement by inserting in the customer id
+            //that was passed into the function
+            $this->stmt = $this->dbConnection->prepare($selectStatement);
+            $this->stmt->bindParam(':name', $name, PDO::PARAM_STR);
+            //execute the select statement and store in $stmt member variable
+            $this->stmt->execute();
+        }
+        catch(PDOException $ex)
+        {
+            die('Could not select records from Sakila Database via PDO: ' . $ex->getMessage());
+        }
+    }
+
     public function fetchActor()
     {
         //at this point....a query should have been executed and stored
@@ -127,6 +150,32 @@ class PDOMySQLFilmsDataModel implements iFilmDataModel
             $this->stmt = $this->dbConnection->prepare($updateStatement);
             $this->stmt->bindParam(':firstName', $first_name, PDO::PARAM_STR);
             $this->stmt->bindParam(':lastName', $last_name, PDO::PARAM_STR);
+            $this->stmt->bindParam(':actor_ID', $actor_ID, PDO::PARAM_INT);
+            //perform the update statement and store in the $stmt member variable
+            $this->stmt->execute();
+            //return the number of rows that the update statement
+            //affected - if successful in this case, the value returned should
+            //be 1 - it could possibly return 0 if no rows were affected
+            return $this->stmt->rowCount();
+        }
+        catch(PDOException $ex)
+        {
+            die('Could not select records from Sakila Database via PDO: ' . $ex->getMessage());
+        }
+    }
+    public function deleteCustomer($actor_ID)
+    {
+        //build an UPDATE sql statment with the data provided to the function
+        //this should always include the customer id
+        //note the parameters/placeholders in the statement
+        $updateStatement = "DELETE FROM actor WHERE actor_id = :actor_ID;";
+
+        try
+        {
+            //prepare the sql statement by inserting into the
+            //placeholders the values that we wish to use to perform
+            //the update
+            $this->stmt = $this->dbConnection->prepare($updateStatement);
             $this->stmt->bindParam(':actor_ID', $actor_ID, PDO::PARAM_INT);
             //perform the update statement and store in the $stmt member variable
             $this->stmt->execute();

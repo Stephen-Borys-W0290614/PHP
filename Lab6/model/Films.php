@@ -5,8 +5,8 @@
 //this class defines a customer object
 class Films
 {
-    private $m_filmName; //int
-    private $m_filmDescription; //string
+ //   private $m_filmName; //int
+   // private $m_filmDescription; //string
     private $m_actorID;
     private $m_actorFName;
     private $m_actorLName;

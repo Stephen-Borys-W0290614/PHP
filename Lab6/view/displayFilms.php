@@ -52,11 +52,21 @@ and open the template in the editor.
                                     <img src="images/edit_icon.png" height="25px" width="25px"/>
                                 </a>
                             </td>
-
+                            <td>
+                            <a href="<?php echo $_SERVER['PHP_SELF']; ?>?idDelete=<?php echo $film->getID(); ?>">
+                                <img src="images/edit_icon.png" height="25px" width="25px"/>
+                            </a>
+                            </td>
                         </tr>
                     <?php
                     endforeach;
                 ?>
+
+                <form action="<?php $_SERVER['PHP_SELF']?>" method="post">
+                    <p>Search For Employees: <input type="text" name="search" id="search" </p>
+                    <p><input type="submit" name="Submit" value="Send Form" /></p>
+                </form>
+
             </tbody>
             <tfoot></tfoot>
         </table>  

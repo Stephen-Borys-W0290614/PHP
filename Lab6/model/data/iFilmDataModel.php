@@ -14,6 +14,8 @@ interface iFilmDataModel
     
     public function selectCustomerById($custID);
 
+    public function selectCustomerByName($name);
+
     public function fetchActor();
     
     public function updateCustomer($actor_ID,$first_name,$last_name);

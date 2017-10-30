@@ -34,6 +34,32 @@ class FilmController
         include '../view/editActor.php';
     }
 
+    public function deleteAction($custID)
+    {
+        //get the current customer by id as it is in the db
+        //return it as a customer object
+        $currentActor = $this->model->getCustomer($custID);
+
+        //load in the editCustomer view which contains the form
+        //and pre-populate the form with the customer data
+        //you just retrieved from the db
+        include '../view/deleteActor.php';
+    }
+
+
+
+    public function searchAction($name){
+
+        //get the current customer by id as it is in the db
+        //return it as a customer object
+        $currentActor = $this->model->getSearchedCustomer($name);
+
+        //load in the editCustomer view which contains the form
+        //and pre-populate the form with the customer data
+        //you just retrieved from the db
+        include '../view/searchedActor.php';
+    }
+
     public function commitUpdateAction($custID,$fName,$lName)
     {
         $lastOperationResults = "";
@@ -53,11 +79,26 @@ class FilmController
         //get the entire customer list again...this time
         //containing the updated customer you just finished
         //updating
-        $arrayOfCustomers = $this->model->getAllFilms();
+        $arrayOfFilms = $this->model->getAllFilms();
 
         //choose the displayCustomers view to display the
         //customers in the array
         include '../view/displayFilms.php';
+    }
+
+    public function commitDeleteAction($custID){
+        $lastOperationResults = "";
+
+        $currentCustomer = $this->model->getCustomer($custID);
+
+        $lastOperationResults = $this->model->deleteCustomer($currentCustomer);
+
+        $arrayOfFilms = $this->model->getAllFilms();
+
+        include '../view/displayFilms.php';
+
+
+
     }
 
 
