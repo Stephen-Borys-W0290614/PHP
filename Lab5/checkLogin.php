@@ -2,8 +2,6 @@
 require("dbconn2.php");
 
 
-// INSERT INTO `WebUsers`(user_name,user_pwd,salt) VALUES ('mike',SHA2(CONCAT('saltedmike', 'whatever'),512),'saltedmike')
-
 session_start();
 
 ob_start();
