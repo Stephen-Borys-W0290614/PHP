@@ -106,18 +106,14 @@ class FilmModel
         //that was retrieved from the fetched record....
         //this will include both customer and address data
         //create a new address object and fill with address data from the db record
-        $address = new Address(
-                 $this->m_DataAccess->fetchAddressID($record),
-                 $this->m_DataAccess->fetchAddress1($record),
-                 $this->m_DataAccess->fetchAddress2($record)
-                 );
+
         //create a new customer object and fill with customer data from
         //the db record and also include the newly created address
         //object created just above
-        $fetchedCustomer = new Customer($this->m_DataAccess->fetchCustomerID($record),
-                 $this->m_DataAccess->fetchCustomerFirstName($record),
-                 $this->m_DataAccess->fetchCustomerLastName($record),
-                 $address);
+        $fetchedCustomer = new Films($this->m_DataAccess->fetchActorID($record),
+                 $this->m_DataAccess->fetchActorFName($record),
+                 $this->m_DataAccess->fetchActorLName($record),
+            $this->m_DataAccess->fetchActorLastUpdate($record));
             
 
         $this->m_DataAccess->closeDB();
@@ -139,8 +135,8 @@ class FilmModel
         //go ahead and perform an UPDATE statement with the new data
         //if the update was successful, the $recordsAffected should be set to 1
         $recordsAffected = $this->m_DataAccess->updateCustomer($customerToUpdate->getID(),
-                $customerToUpdate->getFirstName(),
-                $customerToUpdate->getLastName());
+                $customerToUpdate->getFName(),
+                $customerToUpdate->getLName());
 
         //return message describing the result of update
         return "$recordsAffected record(s) updated succesfully!";

@@ -22,11 +22,11 @@ class FilmController
         include '../view/displayFilms.php';
     }
 
-    public function updateAction($actorID)
+    public function updateAction($custID)
     {
         //get the current customer by id as it is in the db
         //return it as a customer object
-        $currentActor = $this->model->getCustomer($actorID);
+        $currentActor = $this->model->getCustomer($custID);
 
         //load in the editCustomer view which contains the form
         //and pre-populate the form with the customer data
@@ -43,8 +43,8 @@ class FilmController
         $currentCustomer = $this->model->getCustomer($custID);
 
         //update the object with the new values from the form
-        $currentCustomer->setFirstName($fName);
-        $currentCustomer->setLastName($lName);
+        $currentCustomer->setFName($fName);
+        $currentCustomer->setLName($lName);
 
         //send the updated customer object back to the database
         //so that it can be saved in the db
@@ -53,11 +53,11 @@ class FilmController
         //get the entire customer list again...this time
         //containing the updated customer you just finished
         //updating
-        $arrayOfCustomers = $this->model->getAllCustomers();
+        $arrayOfCustomers = $this->model->getAllFilms();
 
         //choose the displayCustomers view to display the
         //customers in the array
-        include '../view/displayCustomers.php';
+        include '../view/displayFilms.php';
     }
 
 

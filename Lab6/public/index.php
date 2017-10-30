@@ -10,7 +10,7 @@ if(isset($_GET['idUpdate']))
 }
 elseif (isset($_POST['UpdateBtn']))
 {
-    $custController->commitUpdateAction($_POST['editCustId'],$_POST['firstName'],$_POST['lastName']);
+    $filmController->commitUpdateAction($_POST['editCustId'],$_POST['firstName'],$_POST['lastName']);
 }
 
 else

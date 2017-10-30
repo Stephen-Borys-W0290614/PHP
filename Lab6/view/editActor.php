@@ -13,17 +13,17 @@ and open the template in the editor.
         <form id="formUpdate" name="formUpdate" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">  
             <p>    
 		<label>Customer ID: 
-                    <input type="text" 	readonly="readonly" name="editCustId" id="editCustId" value="<?php echo $currentCustomer->getID();?>"/> 
+                    <input type="text" 	readonly="readonly" name="editCustId" id="editCustId" value="<?php echo $currentActor->getID();?>"/>
                 </label>  
             </p>
             <p>    
 		<label>First Name: 
-                    <input type="text" name="firstName" id="firstName" value="<?php echo $currentCustomer->getFName();?>"/>
+                    <input type="text" name="firstName" id="firstName" value="<?php echo $currentActor->getFName();?>"/>
                 </label>  
             </p>  
             <p>    
 		<label>Last Name:
-                    <input type="text" name="lastName" id="lastName" value="<?php echo $currentCustomer->getLName();?>"/>
+                    <input type="text" name="lastName" id="lastName" value="<?php echo $currentActor->getLName();?>"/>
                 </label>  
             </p>  
             <p> 

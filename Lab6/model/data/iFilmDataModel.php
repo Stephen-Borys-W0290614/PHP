@@ -16,7 +16,7 @@ interface iFilmDataModel
 
     public function fetchActor();
     
-    public function updateCustomer($custID,$first_name,$last_name);
+    public function updateCustomer($actor_ID,$first_name,$last_name);
 
     // field access functions
     public function fetchMovieName($row);

@@ -110,14 +110,14 @@ class PDOMySQLFilmsDataModel implements iFilmDataModel
     }
 
 
-    public function updateCustomer($custID,$first_name,$last_name)
+    public function updateCustomer($actor_ID,$first_name,$last_name)
     {
         //build an UPDATE sql statment with the data provided to the function
         //this should always include the customer id
         //note the parameters/placeholders in the statement
-        $updateStatement = "UPDATE customer";
+        $updateStatement = "UPDATE actor";
         $updateStatement .= " SET first_name = :firstName,last_name=:lastName";
-        $updateStatement .= " WHERE customer_id = :custID;";
+        $updateStatement .= " WHERE actor_id = :actor_ID;";
 
         try
         {
@@ -127,7 +127,7 @@ class PDOMySQLFilmsDataModel implements iFilmDataModel
             $this->stmt = $this->dbConnection->prepare($updateStatement);
             $this->stmt->bindParam(':firstName', $first_name, PDO::PARAM_STR);
             $this->stmt->bindParam(':lastName', $last_name, PDO::PARAM_STR);
-            $this->stmt->bindParam(':custID', $custID, PDO::PARAM_INT);
+            $this->stmt->bindParam(':actor_ID', $actor_ID, PDO::PARAM_INT);
             //perform the update statement and store in the $stmt member variable
             $this->stmt->execute();
             //return the number of rows that the update statement
