@@ -15,12 +15,16 @@ class TasksController extends Controller
         return view('tasks.index', compact('name','tasks'));
     }
 
-    public function show($id){
+    public function show(Task $task){  //Task Find Wildcard
         //$task = DB::table('tasks')->find($id);
 
-        $task = Task::find($id);
-
+       // $task = Task::find($id);
+        //return $task;
 
         return view('tasks.show', compact('task'));
+
+
     }
+
+
 }
