@@ -67,6 +67,11 @@ and open the template in the editor.
                     <p><input type="submit" name="Submit" value="Send Form" /></p>
                 </form>
 
+                <form action="<?php $_SERVER['PHP_SELF']?>" method="post">
+                    <p>Search For Employees: <input type="hidden" name="add" id="add"</p>
+                    <p><input type="submit" name="Submit" value="Add New Employee" /></p>
+                </form>
+
             </tbody>
             <tfoot></tfoot>
         </table>  

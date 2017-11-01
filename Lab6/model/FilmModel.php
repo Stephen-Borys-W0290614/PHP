@@ -182,6 +182,21 @@ class FilmModel
         return "$recordsAffected record(s) updated succesfully!";
     }
 
+    public function addActor($customerToAdd){
+        $this->m_DataAccess->connectToDB();
+
+        //pass along the newly updated customer object to the
+        //data layer's updateCustomer function so that it can
+        //go ahead and perform an UPDATE statement with the new data
+        //if the update was successful, the $recordsAffected should be set to 1
+        $recordsAffected = $this->m_DataAccess->addCustomer($customerToAdd->getID(),
+            $customerToAdd->getFName(),
+            $customerToAdd->getLName());
+
+        //return message describing the result of update
+        return "$recordsAffected record(s) updated succesfully!";
+    }
+
     public function deleteCustomer($customerToUpdate)
     {
         $this->m_DataAccess->connectToDB();

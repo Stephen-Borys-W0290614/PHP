@@ -52,6 +52,11 @@ endif;
                     <img src="images/edit_icon.png" height="25px" width="25px"/>
                 </a>
             </td>
+            <td>
+                <a href="<?php echo $_SERVER['PHP_SELF']; ?>?idDelete=<?php echo $film->getID(); ?>">
+                    <img src="images/edit_icon.png" height="25px" width="25px"/>
+                </a>
+            </td>
 
 
         </tr>

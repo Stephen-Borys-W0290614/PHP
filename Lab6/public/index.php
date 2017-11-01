@@ -23,6 +23,17 @@ elseif (isset($_POST['DeleteBtn']))
 {
     $filmController->commitDeleteAction($_POST['editCustId']);
 }
+
+elseif(isset($_POST['add'])){
+    $filmController->addActor();
+}
+
+elseif(isset($_POST['AddBtn'])){
+    $filmController->commitAddAction($_POST['id'],$_POST['firstName'],$_POST['lastName']);
+
+}
+
+
 else
 {
     $filmController->displayAction();

@@ -60,6 +60,13 @@ class FilmController
         include '../view/searchedActor.php';
     }
 
+    public function addActor(){
+        //$arrayOfFilms = $this->model->getAllFilms();
+
+        include'../view/addActor.php';
+
+    }
+
     public function commitUpdateAction($custID,$fName,$lName)
     {
         $lastOperationResults = "";
@@ -85,6 +92,37 @@ class FilmController
         //customers in the array
         include '../view/displayFilms.php';
     }
+
+    public function commitAddAction($custID,$fName,$lName)
+    {
+        $lastOperationResults = "";
+
+        //get the current customer as it currently exists
+        //in the database...get it as a customer object
+        $currentCustomer = $this->model->getCustomer($custID);
+
+        $currentCustomer->setFName($fName);
+        $currentCustomer->setLName($lName);
+
+
+        //update the object with the new values from the form
+        //$currentCustomer->setFName($fName);
+        //$currentCustomer->setLName($lName);
+
+        //send the updated customer object back to the database
+        //so that it can be saved in the db
+        $lastOperationResults = $this->model->addActor($currentCustomer);
+
+        //get the entire customer list again...this time
+        //containing the updated customer you just finished
+        //updating
+        $arrayOfFilms = $this->model->getAllFilms();
+
+        //choose the displayCustomers view to display the
+        //customers in the array
+        include '../view/displayFilms.php';
+    }
+
 
     public function commitDeleteAction($custID){
         $lastOperationResults = "";

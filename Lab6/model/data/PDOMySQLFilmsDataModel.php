@@ -163,6 +163,38 @@ class PDOMySQLFilmsDataModel implements iFilmDataModel
             die('Could not select records from Sakila Database via PDO: ' . $ex->getMessage());
         }
     }
+
+
+    public function addCustomer($actor_id, $first_name, $last_name){
+        //build an UPDATE sql statment with the data provided to the function
+        //this should always include the customer id
+        //note the parameters/placeholders in the statement
+        $updateStatement = "INSERT INTO actor(first_name,last_name)";
+        $updateStatement .= " VALUES (:first_name,:last_name);";
+
+        try
+        {
+            //prepare the sql statement by inserting into the
+            //placeholders the values that we wish to use to perform
+            //the update
+            $this->stmt = $this->dbConnection->prepare($updateStatement);
+            $this->stmt->bindParam(':firstName', $first_name, PDO::PARAM_STR);
+            $this->stmt->bindParam(':lastName', $last_name, PDO::PARAM_STR);
+            //perform the update statement and store in the $stmt member variable
+            $this->stmt->execute();
+            //return the number of rows that the update statement
+            //affected - if successful in this case, the value returned should
+            //be 1 - it could possibly return 0 if no rows were affected
+            return $this->stmt->rowCount();
+        }
+        catch(PDOException $ex)
+        {
+            die('Could not select records from Sakila Database via PDO: ' . $ex->getMessage());
+        }
+    }
+
+
+
     public function deleteCustomer($actor_ID)
     {
         //build an UPDATE sql statment with the data provided to the function
