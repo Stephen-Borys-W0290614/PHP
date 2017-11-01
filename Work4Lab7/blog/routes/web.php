@@ -11,21 +11,26 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/tasks', function () {
 
-    $tasks = [
-        'Ball out',
-
-        'Kep jacket on because mans not hot',
-
-        'Make sure the ting goes skiiiiiira'
-    ];
+    $tasks = DB::table('tasks')->get();
 
     $name = 'Terrence';
 
-    return view('welcome', compact('name','tasks')
+    return view('tasks.index', compact('name','tasks')
 
 
         );
 
 });
+
+Route::get('/tasks/{task}', function ($id) {
+
+
+        $task = DB::table('tasks')->find($id);
+
+
+        return view('tasks.show', compact('task'));
+
+    });
+
