@@ -19,6 +19,7 @@ class TasksController extends Controller
         //$task = DB::table('tasks')->find($id);
 
        // $task = Task::find($id);
+        //quit
         //return $task;
 
         return view('tasks.show', compact('task'));
