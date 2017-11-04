@@ -4,7 +4,7 @@
 @section('content')
 
 
-</header>
+
 
 <main role="main">
 
