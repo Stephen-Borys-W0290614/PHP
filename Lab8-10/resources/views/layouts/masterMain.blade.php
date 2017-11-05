@@ -37,7 +37,6 @@
 
 
         </div>
-        @include('layouts.sidebar')
 
     </div>
 

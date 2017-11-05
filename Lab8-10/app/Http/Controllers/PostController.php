@@ -10,14 +10,20 @@ class PostController extends Controller
 {
     public function index(){
 
-        return view('posts.indexMain');
+        $posts = Post::latest()->get();
+        //COULD ALSO DO $posts = Post::orderBy('created_at', 'desc')->get();
+
+
+        return view('posts.indexMain', compact('posts'));
 
     }
 
 
-    public function show(){
+    public function show(Post $post){
 
-        return view('posts.showMain');
+        //$post = Post::find($id);
+
+        return view('posts.showMain', compact('post'));
 
     }
 
@@ -45,6 +51,11 @@ class PostController extends Controller
 
         //$post->save();
 
+        $this->validate(request(), [
+           'title' => 'required|max:25',
+
+           'body' => 'required'
+        ]);
 
         Post::create(request(['title' , 'body']));
 
