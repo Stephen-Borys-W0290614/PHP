@@ -80,4 +80,6 @@
 
 
     </div>
+    @include('layouts.sidebar')
+
 @endsection

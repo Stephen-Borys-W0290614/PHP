@@ -61,7 +61,7 @@ class PostController extends Controller
 
         // And then redirect to the home page
 
-        return redirect('/');
+        return redirect('/posts');
 
     }
 
