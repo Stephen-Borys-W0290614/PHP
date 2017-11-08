@@ -41,6 +41,7 @@
     </div>
 
     @include('layouts.footerMain')
-</main>
+    </main><!-- /.container -->
+
 </body>
 </html>
