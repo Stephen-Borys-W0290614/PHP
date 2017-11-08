@@ -11,6 +11,11 @@
 |
 */
 
+//--------------------------------------------
+
+//This is for part 3 of the rubric I believe.
+    //dd(resolve('App\Billing\stripe'));
+//--------------------------------------------
 
 Route::get('/', 'PostController@index')->name('home');
 
