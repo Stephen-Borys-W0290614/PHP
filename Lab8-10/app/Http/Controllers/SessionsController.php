@@ -56,6 +56,8 @@ class SessionsController extends Controller
 
         return redirect()->home();
 
+        //this logs out
+
     }
 
 
