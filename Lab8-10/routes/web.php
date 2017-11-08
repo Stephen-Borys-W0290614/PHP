@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', 'PostController@index')->name('home');
 
 

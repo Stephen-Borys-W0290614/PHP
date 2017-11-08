@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 
 use App\Post;
 
+use App\Repositories;
+
 use Carbon\Carbon;
 
 class PostController extends Controller
 {
 
-    public function __construct()
+    public function __construct(Post $posts)
     {
 
         $this->middleware('auth')->except(['index', 'show']);
@@ -21,20 +23,18 @@ class PostController extends Controller
     }
 
 
-    public function index(){
+    public function index(Post $posts){
 
-        $posts = Post::latest()
-            ->filter(request(['month', 'year']))
-            ->get();
+        //$posts = $posts->all();
+
+
+       $posts = Post::latest()
+          ->filter(request(['month', 'year']))
+          ->get();
 
 
         //$posts = Post::latest()->get();
         //COULD ALSO DO $posts = Post::orderBy('created_at', 'desc')->get();
-
-
-
-
-
 
 
         return view('posts.indexMain', compact('posts'));
