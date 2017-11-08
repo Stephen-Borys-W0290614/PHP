@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Post;
 
+use Carbon\Carbon;
+
 class PostController extends Controller
 {
 
@@ -13,14 +15,26 @@ class PostController extends Controller
     {
 
         $this->middleware('auth')->except(['index', 'show']);
+        //$this->middleware('guest', ['except' => 'index','show']);
+
 
     }
 
 
     public function index(){
 
-        $posts = Post::latest()->get();
+        $posts = Post::latest()
+            ->filter(request(['month', 'year']))
+            ->get();
+
+
+        //$posts = Post::latest()->get();
         //COULD ALSO DO $posts = Post::orderBy('created_at', 'desc')->get();
+
+
+
+
+
 
 
         return view('posts.indexMain', compact('posts'));

@@ -43,7 +43,7 @@ Route::post('/register', 'RegistrationController@store');
 
 
 
-Route::get('/login', 'SessionsController@create');
+Route::get('/login', 'SessionsController@create')->name('login');
 
 
 
