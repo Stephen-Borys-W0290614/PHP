@@ -5,6 +5,7 @@
                 <a class="nav-link" href="#">New features</a>
                 <a class="nav-link" href="#">Press</a>
                 <a class="nav-link" href="#">New hires</a>
+                <a class="nav-link" href="/posts/create">Create A Post</a>
 
 
                 @if (Auth::check())

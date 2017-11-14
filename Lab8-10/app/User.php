@@ -41,4 +41,10 @@ class User extends Authenticatable
         $this-> posts()->save($post);
 
     }
+
+    public function addComment(Post $post){
+
+        $this-> posts()->save($post);
+
+    }
 }

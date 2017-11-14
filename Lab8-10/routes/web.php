@@ -20,6 +20,8 @@
 Route::get('/', 'PostController@index')->name('home');
 
 
+Route::get('/home', 'PostController@index');
+
 
 Route::get('posts', 'PostController@index');
 

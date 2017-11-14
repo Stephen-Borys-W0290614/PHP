@@ -24,11 +24,11 @@ class Post extends Model
 
 
 
-    public function addComment($body){
-
-        $this->comments()->create(compact('body'));
-
-    }
+//    public function addComment($body){
+//
+//        $this->comments()->create(compact('body'));
+//
+//    }
 
 
     public function scopeFilter($query, $filters){
@@ -59,6 +59,10 @@ class Post extends Model
             ->get()
             ->toArray();
 
+    }
+
+    public function addComment($body) {
+        $this->comments()->create(['body' => $body, 'user_id' => auth()->id()]);
     }
 
 }
