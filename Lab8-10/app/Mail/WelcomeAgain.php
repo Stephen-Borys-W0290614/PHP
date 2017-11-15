@@ -28,6 +28,6 @@ class WelcomeAgain extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.welcome-again');
+        return $this->markdown('emails.welcomeAgain');
     }
 }

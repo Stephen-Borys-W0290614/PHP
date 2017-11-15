@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'sendmail'),
+    'driver' => env('MAIL_DRIVER', 'log'),
 
     /*
     |--------------------------------------------------------------------------
@@ -113,7 +113,7 @@ return [
     */
 
     'markdown' => [
-        'theme' => 'laracasrs',
+        'theme' => 'laracasts',
 
         'paths' => [
             resource_path('views/vendor/mail'),
