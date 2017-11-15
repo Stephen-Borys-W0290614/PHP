@@ -24,17 +24,14 @@ class RegistrationController extends Controller
 
     public function store(RegistrationRequest $form){
 
-        //Validate the form.
 
         $form->persist();
 
-        //Create and save user.
 
 
 //       $user = User::create(request(['name', 'email', bcrypt('password')]));
 
-
-
+        session()->flash('message', 'Thanks So Much For Signing Up!');
 
         //Redirect to the home page.
 

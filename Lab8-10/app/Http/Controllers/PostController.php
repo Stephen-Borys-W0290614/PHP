@@ -27,6 +27,7 @@ class PostController extends Controller
 
         //$posts = $posts->all();
 
+        //return session('message');
 
        $posts = Post::latest()
           ->filter(request(['month', 'year']))
@@ -96,6 +97,12 @@ class PostController extends Controller
 //            'user_id' => auth()->id()
 
 //        ]);
+
+        //FLAS MESSAGE
+
+        session()->flash('message', 'Your Post Has Now Been Published');
+
+
 
         // And then redirect to the home page
 
