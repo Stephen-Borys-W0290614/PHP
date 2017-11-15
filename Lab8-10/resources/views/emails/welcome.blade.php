@@ -15,7 +15,7 @@
 <body>
 
 
-    <h1>Welcome To Laracasts!</h1>
+    <h1>Welcome To Laracasts, {{ $user->name }}</h1>
 
 
 </body>
