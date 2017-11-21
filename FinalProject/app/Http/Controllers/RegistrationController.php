@@ -8,6 +8,8 @@ use Mail;
 
 use App\User;
 
+use App\Role;
+
 use App\Mail\Welcome;
 
 use App\Http\Requests\RegistrationRequest;
@@ -22,12 +24,28 @@ class RegistrationController extends Controller
     }
 
 
-    public function store(RegistrationRequest $form){
+    public function store(){
 
 
-        $form->persist();
+//        $form->persist();
+
+        $user = User::create([
+
+            'name' => request('name'),
+
+            'email' => request('email'),
+
+           'password' => bcrypt(request('password'))
+     ]);
+        $user
+            ->roles()
+            ->attach(Role::where('title', 'mod')->first());
 
 
+
+
+
+       auth()->login($user);
 
 //       $user = User::create(request(['name', 'email', bcrypt('password')]));
 

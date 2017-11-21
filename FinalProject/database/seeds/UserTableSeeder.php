@@ -14,8 +14,8 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-    $role_employee = Role::where('title', 'employee')->first();
-    $role_manager  = Role::where('title', 'manager')->first();
+    $role_employee = Role::where('title', 'mod')->first();
+    $role_manager  = Role::where('title', 'admin')->first();
     $role_theme  = Role::where('title', 'theme manager')->first();
 
 

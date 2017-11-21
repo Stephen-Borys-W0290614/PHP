@@ -13,20 +13,20 @@ class RoleTableSeeder extends Seeder
     public function run()
     {
     $role = new Role();
-    $role->title = 'employee';
-    $role->description = 'A Employee User';
+    $role->title = 'mod';
+    $role->description = 'This Is A Standard User';
     $role->save();
 
 
     $role = new Role();
-    $role->title = 'manager';
-    $role->description = 'A Manager User';
+    $role->title = 'admin';
+    $role->description = 'This User Is An Admin';
     $role->save();
 
 
     $role = new Role();
     $role->title = 'theme manager';
-    $role->description = 'A Theme Manager';
+    $role->description = 'This User Is An  Theme Manager';
     $role->save();
   }
 }

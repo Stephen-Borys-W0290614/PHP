@@ -43,25 +43,30 @@ class RegistrationRequest extends FormRequest
     }
 
 
-    public function persist(){
-
-        $user = User::create([
-
-            'name' => request('name'),
-
-            'email' => request('email'),
-
-            'password' => bcrypt(request('password'))
-
-        ]);
-
-
-
-        //Sign them in.
-
-        auth()->login($user);
-
-
-        //\Mail::to($user)->send(new WelcomeAgain($user));
-    }
+//    public function persist(){
+//
+//        $user = User::create([
+//
+//            'name' => request('name'),
+//
+//            'email' => request('email'),
+//
+//            'password' => bcrypt(request('password'))
+//
+//        ]);
+//
+//        $user
+//            ->roles()
+//            ->attach(Role::where('name', 'employee')->first());
+//        return $user;
+//
+//
+//
+//        //Sign them in.
+//
+//        auth()->login($user);
+//
+//
+//        //\Mail::to($user)->send(new WelcomeAgain($user));
+//    }
 }

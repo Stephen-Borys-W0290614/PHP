@@ -23,6 +23,10 @@ Auth::routes();
 Route::get('/', 'PostsController@index')->name('home');
 
 
+Route::get('/users', 'UsersController@index');
+
+
+
 //Route::get('/home', 'PostController@index');
 
 
