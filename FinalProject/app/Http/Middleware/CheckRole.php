@@ -7,25 +7,27 @@ use Closure;
 class CheckRole
 {
     /**
-     * Handle an incoming request.
+     * Handle the incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure $next
+     * @param  ...$roles
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, ...$roles)
     {
-        if ($request->user() === null){
-            return responce("Wrong", 401);
+        if (!$request->user()) {
+            return redirect('/');
+        }
+        foreach ($roles as $role) {
+
+            if ($request->user()->hasRole($role)) {
+                return $next($request);
+            }
+
         }
 
-        $actions = $request->route()->getAction();
-        $roles= isset($actions['roles']) ? $actions['roles'] : null;
-
-        if ($request->user()->hasAnyRole($roles) || !$roles){
-            return $next($request);
-        }
-        return responce("Wrong", 401);
-        //return $next($request);
+        return redirect('/');
     }
+
 }

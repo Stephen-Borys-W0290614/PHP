@@ -5,22 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="627017a5-1a1d-4eb8-9ae1-e8df1adf23db" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FinalProject/app/Http/Controllers/SearchController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FinalProject/app/Http/Controllers/UsersController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FinalProject/app/Http/Middleware/CheckRole.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FinalProject/app/Search.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/ProjectManagmentAssignment/checkLogin.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/ProjectManagmentAssignment/checkUser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/ProjectManagmentAssignment/dbconn.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/ProjectManagmentAssignment/isLoggedIn.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/ProjectManagmentAssignment/logout.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/ProjectManagmentAssignment/mainLogin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/ProjectManagmentAssignment/showEmployees.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FinalProject/app/Http/Controllers/Auth/RedirectIfAuthenticated.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FinalProject/resources/views/users/showMain.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/W0290614-Stephen-Borys.iml" afterPath="$PROJECT_DIR$/.idea/W0290614-Stephen-Borys.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/app/Http/Controllers/AdminController.php" afterPath="$PROJECT_DIR$/FinalProject/app/Http/Controllers/AdminController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/app/Http/Controllers/UsersController.php" afterPath="$PROJECT_DIR$/FinalProject/app/Http/Controllers/UsersController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/app/Http/Middleware/CheckRole.php" afterPath="$PROJECT_DIR$/FinalProject/app/Http/Middleware/CheckRole.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/app/User.php" afterPath="$PROJECT_DIR$/FinalProject/app/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/resources/views/admin/admin.blade.php" afterPath="$PROJECT_DIR$/FinalProject/resources/views/admin/admin.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/resources/views/users/indexMain.blade.php" afterPath="$PROJECT_DIR$/FinalProject/resources/views/users/indexMain.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/resources/views/users/user.blade.php" afterPath="$PROJECT_DIR$/FinalProject/resources/views/users/user.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab8-10/storage/logs/laravel.log" afterPath="$PROJECT_DIR$/Lab8-10/storage/logs/laravel.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/routes/web.php" afterPath="$PROJECT_DIR$/FinalProject/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -104,7 +99,7 @@
       <file leaf-file-name="PDOMySQLFilmsDataModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lab6/model/data/PDOMySQLFilmsDataModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1028">
+            <state relative-caret-position="6876">
               <caret line="194" column="0" lean-forward="false" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
               <folding>
                 <element signature="e#6#106#0#PHP" expanded="true" />
@@ -124,7 +119,7 @@
       <file leaf-file-name="showEmployees.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demo/ProjectManagmentAssignment/showEmployees.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
+            <state relative-caret-position="3708">
               <caret line="103" column="55" lean-forward="false" selection-start-line="103" selection-start-column="55" selection-end-line="103" selection-end-column="55" />
               <folding>
                 <marker date="1511325112843" expanded="true" signature="2143:2180" ph="SELECT * FRO... Employees" />
@@ -274,7 +269,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -511,6 +505,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -594,6 +589,7 @@
       <workItem from="1509328520442" duration="2602000" />
       <workItem from="1509368218220" duration="15683000" />
       <workItem from="1511322573377" duration="1828000" />
+      <workItem from="1511358796742" duration="1751000" />
     </task>
     <task id="LOCAL-00001" summary="updating .gitignore 9/11">
       <created>1505161451674</created>
@@ -886,22 +882,21 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253085000" />
+    <option name="totallyTimeSpent" value="254836000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="35" width="3842" height="2084" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12884411" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12990455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3927273" sideWeight="0.5174479" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31428573" sideWeight="0.48125" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31428573" sideWeight="0.48125" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299595" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3927273" sideWeight="0.48255208" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3927273" sideWeight="0.48255208" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299595" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1242,7 +1237,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
           <caret line="22" column="6" lean-forward="false" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1272,10 +1266,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4824">
           <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-          <folding>
-            <marker date="1509234431331" expanded="true" signature="1727:1749" ph="SELECT * FRO... customer" />
-            <marker date="1509234431331" expanded="true" signature="2807:2829" ph="SELECT * FRO... customer" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1283,7 +1273,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2160">
           <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1345,7 +1334,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Lab6/model/data/PDOMySQLFilmsDataModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1028">
+        <state relative-caret-position="6876">
           <caret line="194" column="0" lean-forward="false" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
           <folding>
             <element signature="e#6#106#0#PHP" expanded="true" />
@@ -1371,7 +1360,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/ProjectManagmentAssignment/showEmployees.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
+        <state relative-caret-position="3708">
           <caret line="103" column="55" lean-forward="false" selection-start-line="103" selection-start-column="55" selection-end-line="103" selection-end-column="55" />
           <folding>
             <marker date="1511325112843" expanded="true" signature="2143:2180" ph="SELECT * FRO... Employees" />

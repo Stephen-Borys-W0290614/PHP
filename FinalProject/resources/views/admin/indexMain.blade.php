@@ -4,7 +4,7 @@
 @section('content')
 
     @if(Auth::user()->isAdministrator())
-        Admin Page
+        You is admiN!!!
     @else
         <script>window.location = "/home";</script>
     @endif

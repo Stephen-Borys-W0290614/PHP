@@ -47,4 +47,11 @@ class UsersController extends Controller
         return view('users.indexMain' , compact('users'));
 
     }
+
+    public function show(User $user){
+
+        return view('users.showMain', compact('user'));
+
+
+    }
 }

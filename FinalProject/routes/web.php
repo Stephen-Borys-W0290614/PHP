@@ -17,13 +17,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'PostsController@index')->name('home');
 
 
 Route::get('/', 'PostsController@index')->name('home');
 
 
 Route::get('/users', 'UsersController@index');
+
+
+Route::get('/users/edit/{user}', 'UsersController@show');
 
 
 Route::get('/admin','AdminController@adminPage');
