@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class CheckRole
+class CheckRole //Check laravel docs for check role
 {
     /**
      * Handle the incoming request.

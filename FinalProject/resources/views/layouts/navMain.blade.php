@@ -22,10 +22,11 @@
 
                     <a class="nav-link" href="/posts/create">Create A Post</a>
 
-                    @if(Auth::user()->role === "admin")
-                        <a class="nav-link" href="/users">Edit User</a>
-                    @endif
 
+                    @if(Auth::user()->isAdministrator())
+                        <a class="nav-link" href="/users">Edit User</a>
+                    @else
+                    @endif
 
                     <a class="nav-link ml-auto" href="#">{{ Auth::user()->name }}</a>
 
