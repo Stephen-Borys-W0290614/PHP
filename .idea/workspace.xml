@@ -5,6 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="627017a5-1a1d-4eb8-9ae1-e8df1adf23db" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FinalProject/app/Http/Controllers/SearchController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FinalProject/app/Http/Controllers/UsersController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FinalProject/app/Http/Middleware/CheckRole.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FinalProject/app/Search.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/ProjectManagmentAssignment/checkLogin.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/ProjectManagmentAssignment/checkUser.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/ProjectManagmentAssignment/dbconn.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/ProjectManagmentAssignment/isLoggedIn.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/ProjectManagmentAssignment/logout.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/ProjectManagmentAssignment/mainLogin.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/ProjectManagmentAssignment/showEmployees.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/W0290614-Stephen-Borys.iml" afterPath="$PROJECT_DIR$/.idea/W0290614-Stephen-Borys.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/resources/views/users/indexMain.blade.php" afterPath="$PROJECT_DIR$/FinalProject/resources/views/users/indexMain.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/resources/views/users/user.blade.php" afterPath="$PROJECT_DIR$/FinalProject/resources/views/users/user.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab8-10/storage/logs/laravel.log" afterPath="$PROJECT_DIR$/Lab8-10/storage/logs/laravel.log" />
@@ -23,16 +36,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="4068">
               <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomerController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Oct25th/PHP_MVC/controller/CustomerController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2160">
-              <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -72,21 +75,8 @@
         <entry file="file://$PROJECT_DIR$/Lab6/view/addActor.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="612">
-              <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+              <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PDOMySQLCustomerDataModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Oct25th/PHP_MVC/model/data/PDOMySQLCustomerDataModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4824">
-              <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-              <folding>
-                <marker date="1509234431331" expanded="true" signature="1727:1749" ph="SELECT * FRO... customer" />
-                <marker date="1509234431331" expanded="true" signature="2807:2829" ph="SELECT * FRO... customer" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -111,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PDOMySQLFilmsDataModel.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PDOMySQLFilmsDataModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lab6/model/data/PDOMySQLFilmsDataModel.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1028">
-              <caret line="194" column="0" lean-forward="true" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+              <caret line="194" column="0" lean-forward="false" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
               <folding>
                 <element signature="e#6#106#0#PHP" expanded="true" />
                 <marker date="1509411758520" expanded="true" signature="1712:1725" ph="SELECT * FRO... films" />
@@ -127,6 +117,28 @@
                 <marker date="1509411758520" expanded="true" signature="7913:7930" ph="DELETE FROM " />
                 <marker date="1509411758520" expanded="true" signature="7913:7957" ph="DELETE FROM " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="showEmployees.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/demo/ProjectManagmentAssignment/showEmployees.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="684">
+              <caret line="103" column="55" lean-forward="false" selection-start-line="103" selection-start-column="55" selection-end-line="103" selection-end-column="55" />
+              <folding>
+                <marker date="1511325112843" expanded="true" signature="2143:2180" ph="SELECT * FRO... Employees" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dbconn.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo/ProjectManagmentAssignment/dbconn.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="2" column="67" lean-forward="false" selection-start-line="2" selection-start-column="67" selection-end-line="2" selection-end-column="67" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -160,8 +172,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Lab4/index3.php" />
-        <option value="$PROJECT_DIR$/demo/Oct18th/LoginHashRoundsWithRegister/recaptchalib.php" />
         <option value="$PROJECT_DIR$/Lab4/index.php" />
         <option value="$PROJECT_DIR$/Lab5/searchEmployee.php" />
         <option value="$PROJECT_DIR$/Lab5/mainLogin.html" />
@@ -211,6 +221,8 @@
         <option value="$PROJECT_DIR$/Lab6/model/data/PDOMySQLFilmsDataModel.php" />
         <option value="$PROJECT_DIR$/Lab6/model/FilmModel.php" />
         <option value="$PROJECT_DIR$/Lab6/view/addActor.php" />
+        <option value="$PROJECT_DIR$/demo/ProjectManagmentAssignment/dbconn.php" />
+        <option value="$PROJECT_DIR$/demo/ProjectManagmentAssignment/showEmployees.php" />
       </list>
     </option>
   </component>
@@ -219,6 +231,9 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/TheFinalProject/node_modules" />
   </component>
   <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
@@ -266,6 +281,11 @@
             <path>
               <item name="W0290614-Stephen-Borys" type="b2602c69:ProjectViewProjectNode" />
               <item name="W0290614-Stephen-Borys" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="W0290614-Stephen-Borys" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W0290614-Stephen-Borys" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Assignment1" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="W0290614-Stephen-Borys" type="b2602c69:ProjectViewProjectNode" />
@@ -356,6 +376,12 @@
               <item name="Oct23rd" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="PHP_MVC" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="W0290614-Stephen-Borys" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W0290614-Stephen-Borys" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="demo" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="ProjectManagmentAssignment" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="W0290614-Stephen-Borys" type="b2602c69:ProjectViewProjectNode" />
@@ -496,11 +522,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/demo/ProjectManagmentAssignment" />
       <recent name="$PROJECT_DIR$/Lab6/view" />
       <recent name="$PROJECT_DIR$/Lab6/public/images" />
       <recent name="$PROJECT_DIR$/Lab6/model" />
       <recent name="$PROJECT_DIR$/Lab6/public" />
-      <recent name="$PROJECT_DIR$/Lab6/model/db" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -567,7 +593,7 @@
       <workItem from="1509232402124" duration="15892000" />
       <workItem from="1509328520442" duration="2602000" />
       <workItem from="1509368218220" duration="15683000" />
-      <workItem from="1511322573377" duration="554000" />
+      <workItem from="1511322573377" duration="1828000" />
     </task>
     <task id="LOCAL-00001" summary="updating .gitignore 9/11">
       <created>1505161451674</created>
@@ -860,7 +886,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="251811000" />
+    <option name="totallyTimeSpent" value="253085000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="35" width="3842" height="2084" extended-state="6" />
@@ -870,7 +896,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3927273" sideWeight="0.5174479" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31428573" sideWeight="0.48125" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31428573" sideWeight="0.48125" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299595" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -973,20 +999,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Lab4/index2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lab4/iResizeable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lab4/shape.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -1012,6 +1024,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1019,6 +1032,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1082,6 +1096,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1089,6 +1104,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
           <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="37" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1096,6 +1112,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1225,6 +1242,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
           <caret line="22" column="6" lean-forward="false" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1288,7 +1306,7 @@
     <entry file="file://$PROJECT_DIR$/Lab6/view/addActor.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
-          <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+          <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1328,7 +1346,7 @@
     <entry file="file://$PROJECT_DIR$/Lab6/model/data/PDOMySQLFilmsDataModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1028">
-          <caret line="194" column="0" lean-forward="true" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+          <caret line="194" column="0" lean-forward="false" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
           <folding>
             <element signature="e#6#106#0#PHP" expanded="true" />
             <marker date="1509411758520" expanded="true" signature="1712:1725" ph="SELECT * FRO... films" />
@@ -1339,6 +1357,24 @@
             <marker date="1509411758520" expanded="true" signature="6579:6618" ph="INSERT INTO actor... " />
             <marker date="1509411758520" expanded="true" signature="7913:7930" ph="DELETE FROM " />
             <marker date="1509411758520" expanded="true" signature="7913:7957" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/ProjectManagmentAssignment/dbconn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="2" column="67" lean-forward="false" selection-start-line="2" selection-start-column="67" selection-end-line="2" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/ProjectManagmentAssignment/showEmployees.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="103" column="55" lean-forward="false" selection-start-line="103" selection-start-column="55" selection-end-line="103" selection-end-column="55" />
+          <folding>
+            <marker date="1511325112843" expanded="true" signature="2143:2180" ph="SELECT * FRO... Employees" />
           </folding>
         </state>
       </provider>

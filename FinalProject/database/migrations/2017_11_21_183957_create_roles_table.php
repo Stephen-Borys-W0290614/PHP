@@ -28,6 +28,8 @@ class CreateRolesTable extends Migration
 
 
 
+
+
         });
     }
 

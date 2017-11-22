@@ -26,6 +26,12 @@ Route::get('/', 'PostsController@index')->name('home');
 Route::get('/users', 'UsersController@index');
 
 
+Route::get('/admin','AdminController@adminPage');
+
+
+
+
+
 
 //Route::get('/home', 'PostController@index');
 
