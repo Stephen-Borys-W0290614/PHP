@@ -3,17 +3,16 @@
 
 @section('content')
 
-    <div class="col-sm-8 blog-main">
+    <div class="col-md-6 text-right">
 
-        <form action="{{ route('users.indexMain') }}" method="get">
+        {{--<form action="{{ route('users.indexMain') }}" method="get" class="form-inline">--}}
             <div class="form-group">
 
-            <input type="text" class="form-control" name="search">
-
+            <input type="text" class="form-control" name="search" placeholder="Keyword" value="{{ isset($search) ? $search : '' }}">
     </div>
 
     <div class="form-group">
-        <button class="btn btn-primary" type="submit">Search</button>
+        <button class="btn btn-success" type="submit">Search</button>
     </div>
 
     </form>
@@ -30,17 +29,19 @@
 
                 @include('users.user')
 
+
+
             @endforeach
 
             <nav class="blog-pagination">
                 <a class="btn btn-outline-primary" href="#">Older</a>
                 <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
             </nav>
+                {{--{{ $categories->appends(['search' => $search]) }}--}}
+
 
         </div><!-- /.blog-main -->
         @include('layouts.sidebar')
     </div>
-
-
     </main><!-- /.container -->
 @endsection

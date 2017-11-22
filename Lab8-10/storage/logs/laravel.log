@@ -4103,3 +4103,13 @@ Content-Transfer-Encoding: quoted-printable
 © 2017 Laravel. All rights reserved.
 
   
+[2017-11-22 03:01:05] local.ERROR: Symfony\Component\Console\Exception\CommandNotFoundException: Command "servew" is not defined.
+
+Did you mean this?
+    serve in /home/inet2005/PhpstormProjects/W0290614-Stephen-Borys/Lab8-10/vendor/symfony/console/Application.php:596
+Stack trace:
+#0 /home/inet2005/PhpstormProjects/W0290614-Stephen-Borys/Lab8-10/vendor/symfony/console/Application.php(205): Symfony\Component\Console\Application->find('servew')
+#1 /home/inet2005/PhpstormProjects/W0290614-Stephen-Borys/Lab8-10/vendor/symfony/console/Application.php(125): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /home/inet2005/PhpstormProjects/W0290614-Stephen-Borys/Lab8-10/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /home/inet2005/PhpstormProjects/W0290614-Stephen-Borys/Lab8-10/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  

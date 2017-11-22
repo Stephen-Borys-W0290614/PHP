@@ -15,6 +15,8 @@
 
             Updated: {{ $user->updated_at }}
 
+            <a href="/users/edit/{{ $user->id }}"> Edit User</a>
+
             ===========================
 
         </p>
