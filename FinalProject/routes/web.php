@@ -23,7 +23,8 @@ Route::get('/home', 'PostsController@index')->name('home');
 Route::get('/', 'PostsController@index')->name('home');
 
 
-Route::get('/users', 'UsersController@index');
+Route::get('/users', 'UsersController@index')->middleware('auth');
+
 
 
 Route::get('/users/edit/{user}', 'UsersController@show');
@@ -36,28 +37,28 @@ Route::get('/admin','AdminController@adminPage');
 
 
 
-//Route::get('/home', 'PostController@index');
+Route::get('/home', 'PostController@index');
 
 
-//Route::get('posts', 'PostController@index');
-
-
-
-//Route::get('/posts/create', 'PostController@create');
+Route::get('posts', 'PostController@index');
 
 
 
-//Route::post('/posts', 'PostController@store');
+Route::get('/posts/create', 'PostController@create');
 
 
 
-//Route::get('/posts/{post}', 'PostController@show');
+Route::post('/posts', 'PostController@store');
 
 
-//Route::get('/posts/tags/{tag}', 'TagsController@index');
+
+Route::get('/posts/{post}', 'PostController@show');
 
 
-//Route::post('/posts/{post}/comments', 'CommentsController@store');
+Route::get('/posts/tags/{tag}', 'TagsController@index');
+
+
+Route::post('/posts/{post}/comments', 'CommentsController@store');
 
 
 

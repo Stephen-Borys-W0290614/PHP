@@ -36,6 +36,9 @@
             <tbody>
             {{--@foreach ($users as $user)--}}
                 <tr>
+                    <form method="POST" action="/posts">
+
+                        {{ csrf_field() }}
                     <form action="{{ route('users.user') }}" method="post">
                         <td> {{ $user->id }}</td>
                         <td> {{ $user->name }}</td>

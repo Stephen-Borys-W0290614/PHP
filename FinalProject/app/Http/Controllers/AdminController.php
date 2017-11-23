@@ -17,12 +17,12 @@ use Carbon\Carbon;
 class AdminController extends Controller
 
 {
-    public function __construct()
-    {
-
-        $this->middleware('check');
-
-    }
+//    public function __construct()
+//    {
+//
+//        $this->middleware('role:admin');
+//
+//    }
 
 
     public function adminPage()

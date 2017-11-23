@@ -5,18 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="627017a5-1a1d-4eb8-9ae1-e8df1adf23db" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FinalProject/app/Http/Controllers/Auth/RedirectIfAuthenticated.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/W0290614-Stephen-Borys.iml" afterPath="$PROJECT_DIR$/.idea/W0290614-Stephen-Borys.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/app/Http/Controllers/AdminController.php" afterPath="$PROJECT_DIR$/FinalProject/app/Http/Controllers/AdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/app/Http/Controllers/UsersController.php" afterPath="$PROJECT_DIR$/FinalProject/app/Http/Controllers/UsersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/app/Http/Middleware/CheckRole.php" afterPath="$PROJECT_DIR$/FinalProject/app/Http/Middleware/CheckRole.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/app/User.php" afterPath="$PROJECT_DIR$/FinalProject/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/resources/views/admin/admin.blade.php" afterPath="$PROJECT_DIR$/FinalProject/resources/views/admin/admin.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/resources/views/layouts/navMain.blade.php" afterPath="$PROJECT_DIR$/FinalProject/resources/views/layouts/navMain.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/resources/views/users/indexMain.blade.php" afterPath="$PROJECT_DIR$/FinalProject/resources/views/users/indexMain.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/resources/views/users/showMain.blade.php" afterPath="$PROJECT_DIR$/FinalProject/resources/views/users/showMain.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/resources/views/layouts/footerMain.blade.php" afterPath="$PROJECT_DIR$/FinalProject/resources/views/layouts/footerMain.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/resources/views/layouts/masterMain.blade.php" afterPath="$PROJECT_DIR$/FinalProject/resources/views/layouts/masterMain.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/routes/web.php" afterPath="$PROJECT_DIR$/FinalProject/routes/web.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab8-10/public/css/blog.css" afterPath="$PROJECT_DIR$/Lab8-10/public/css/blog.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -269,7 +263,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -507,12 +500,13 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/FinalProject" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.gitignore" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
@@ -591,6 +585,8 @@
       <workItem from="1509368218220" duration="15683000" />
       <workItem from="1511322573377" duration="1828000" />
       <workItem from="1511358796742" duration="3065000" />
+      <workItem from="1511378417500" duration="822000" />
+      <workItem from="1511447929759" duration="680000" />
     </task>
     <task id="LOCAL-00001" summary="updating .gitignore 9/11">
       <created>1505161451674</created>
@@ -883,13 +879,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256150000" />
+    <option name="totallyTimeSpent" value="257652000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="35" width="3842" height="2084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12990455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13202545" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3927273" sideWeight="0.5174479" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1021,7 +1017,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1029,7 +1024,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1101,7 +1095,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
           <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="37" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1109,7 +1102,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
