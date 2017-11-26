@@ -36,10 +36,9 @@
             <tbody>
             {{--@foreach ($users as $user)--}}
                 <tr>
-                    <form method="POST" action="/posts">
+                    <form method="POST" action="/users">
 
                         {{ csrf_field() }}
-                    <form action="{{ route('users.user') }}" method="post">
                         <td> {{ $user->id }}</td>
                         <td> {{ $user->name }}</td>
                         <td> {{ $user->email }}</td>
@@ -48,9 +47,9 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        {{ csrf_field() }}
                         <td><button type="submit">Update</button></td>
 
+                        @include('layouts.errors')
 
                     </form>
                 </tr>

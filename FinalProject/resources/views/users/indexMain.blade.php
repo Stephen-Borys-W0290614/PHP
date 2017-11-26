@@ -1,15 +1,24 @@
+@if(Auth::user()->isAdministrator())
+
+@else
+    <script>window.location = "/home";</script>
+@endif
+
 @extends ('layouts.masterMain')
 
 
 @section('content')
 
-    @if(Auth::user()->isAdministrator())
-        Admin Page
-    @else
-        <script>window.location = "/home";</script>
-    @endif
+    {{--@if(Auth::user()->isAdministrator())--}}
+
+    {{--@else--}}
+        {{--<script>window.location = "/home";</script>--}}
+    {{--@endif--}}
 
     <div class="col-md-6 text-right">
+        <form method="POST" action="/users/searched">
+
+            {{ csrf_field() }}
 
         {{--<form action="{{ route('users.indexMain') }}" method="get" class="form-inline">--}}
             <div class="form-group">

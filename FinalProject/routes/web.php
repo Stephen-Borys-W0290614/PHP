@@ -26,8 +26,18 @@ Route::get('/', 'PostsController@index')->name('home');
 Route::get('/users', 'UsersController@index')->middleware('auth');
 
 
+Route::post('/users', 'UsersController@store')->middleware('auth');
+
+
+Route::post('/users/searched', 'UsersController@search')->middleware('auth');
+
 
 Route::get('/users/edit/{user}', 'UsersController@show');
+
+
+
+Route::get('/themes', 'ThemesController@index');
+
 
 
 Route::get('/admin','AdminController@adminPage');
