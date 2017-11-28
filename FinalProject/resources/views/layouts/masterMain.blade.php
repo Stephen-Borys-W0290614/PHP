@@ -15,6 +15,12 @@
 
     <!-- Custom styles for this template -->
     <link href="/css/blog.css" rel="stylesheet">
+
+    <!--This is for the auto pooling-->
+    <script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+    <script src="poll.js" type="text/javascript" charset="utf-8"></script>
+
 </head>
 
 <body>

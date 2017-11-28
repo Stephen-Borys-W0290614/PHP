@@ -29,7 +29,7 @@ Route::get('/users', 'UsersController@index')->middleware('auth');
 Route::post('/users', 'UsersController@store')->middleware('auth');
 
 
-Route::post('/users/searched', 'UsersController@search')->middleware('auth');
+Route::post('/users/searched', 'SearchController@search');
 
 
 Route::get('/users/edit/{user}', 'UsersController@show');
