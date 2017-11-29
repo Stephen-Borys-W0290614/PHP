@@ -1,5 +1,19 @@
 <aside class="col-sm-3 ml-sm-auto blog-sidebar">
-    <div class="sidebar-module sidebar-module-inset">
+    <div class="sidebar-module">
+        <h4>Things To Do</h4>
+        @if (Auth::check())
+            <a class="nav-link" href="/posts/create">Create A Post</a>
+
+        @endif
+
+        @if (! Auth::check())
+
+            <a class="nav-link" href="/register">Create An Account</a>
+
+            <a class="nav-link" href="/login">Login</a>
+        @endif
+    </div>
+            <div class="sidebar-module sidebar-module-inset">
         <h4>About</h4>
         <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
     </div>

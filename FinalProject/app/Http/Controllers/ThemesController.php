@@ -9,7 +9,7 @@ use App\Theme;
 class ThemesController extends Controller
 {
 
-    public function __construct(User $users)
+    public function __construct()
     {
 
         $this->middleware('auth');
