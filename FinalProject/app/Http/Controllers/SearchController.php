@@ -10,7 +10,14 @@ use App\User;
 
 class SearchController extends Controller
 {
+    public function __construct(User $users)
+    {
 
+        $this->middleware('auth');
+        //$this->middleware('guest', ['except' => 'index','show']);
+
+
+    }
 
     public function search(Request $request)
     {

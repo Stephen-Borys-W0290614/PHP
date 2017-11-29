@@ -10,7 +10,7 @@ use App\Post;
 class PostsController extends Controller
 {
 
-    public function __construct(Post $posts)
+    public function __construct()
     {
 
         $this->middleware('auth')->except(['index', 'show']);

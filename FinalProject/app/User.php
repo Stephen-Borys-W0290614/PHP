@@ -49,82 +49,29 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class, 'user_role');
     }
 
-    public function posts(){
+    public function posts()
+    {
 
         return $this->hasMany(Post::class);
 
     }
 
-    public function publish(Post $post){
+    public function publish(Post $post)
+    {
 
-        $this-> posts()->save($post);
+        $this->posts()->save($post);
 
     }
 
-    public function addComment(Post $post){
+    public function addComment(Post $post)
+    {
 
-        $this-> posts()->save($post);
+        $this->posts()->save($post);
 
     }
 
 
 //
-//    public function authorizeRoles($roles)
-//    {
-//        if (is_array($roles)) {
-//            return $this->hasAnyRole($roles) ||
-//                abort(401, 'This action is unauthorized.');
-//        }
-//        return $this->hasRole($roles) ||
-//            abort(401, 'This action is unauthorized.');
-//    }
-//    /**
-//     * Check multiple roles
-//     * @param array $roles
-//     */
-//    public function hasAnyRole($roles)
-//    {
-//        //return null !== $this->roles()->whereIn('name', $roles)->first();
-//        if (is_array($roles)){
-//            foreach ($roles as $role){
-//                if ($this->hasRole($role)){
-//                    return true;
-//                }
-//            }
-//}
-//        else{
-//            if($this->hasRole($roles)){
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
-//    /**
-//     * Check one role
-//     * @param string $role
-//     */
-//    public function hasRole($role)
-//    {
-//        //return null !== $this->roles()->where('name', $role)->first();
-//        if ($this->roles()->where('name', $role)->first()){
-//            return true;
-//        }
-//        return false;
-//    }
-//
-    public function isAdministrator() {
-        return $this->roles()->where('title', 'admin')->exists();
-    }
-
-    public function isTheme() {
-        return $this->roles()->where('title', 'theme manager')->exists();
-    }
-
-    public function isMod() {
-        return $this->roles()->where('title', 'mod')->exists();
-    }
-
-
     public function authorizeRoles($roles)
     {
         if (is_array($roles)) {
@@ -138,20 +85,58 @@ class User extends Authenticatable
     /**
      * Check multiple roles
      * @param array $roles
-     * @return null
      */
     public function hasAnyRole($roles)
     {
-        return null !== $this->roles()->whereIn('name', $roles)->first();
+        //return null !== $this->roles()->whereIn('name', $roles)->first();
+        if (is_array($roles)) {
+            foreach ($roles as $role) {
+                if ($this->hasRole($role)) {
+                    return true;
+                }
+            }
+        } else {
+            if ($this->hasRole($roles)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
      * Check one role
      * @param string $role
-     * @return null
      */
     public function hasRole($role)
     {
-        return null !== $this->roles()->where('name', $role)->first();
+        //return null !== $this->roles()->where('name', $role)->first();
+        if ($this->roles()->where('title', $role)->first()) {
+            return true;
+        }
+        return false;
     }
+
+//
+    public function isAdministrator()
+    {
+        return $this->roles()->where('title', 'admin')->exists();
+    }
+
+    public function isTheme()
+    {
+        return $this->roles()->where('title', 'theme manager')->exists();
+    }
+
+    public function isMod()
+    {
+        return $this->roles()->where('title', 'mod')->exists();
+    }
+
+
 }
+
+    /**
+     * Check multiple roles
+     * @param array $roles
+     * @return null
+     */

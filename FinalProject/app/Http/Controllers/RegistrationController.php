@@ -37,9 +37,9 @@ class RegistrationController extends Controller
 
            'password' => bcrypt(request('password'))
      ]);
-        $user
-            ->roles()
-            ->attach(Role::where('title', 'mod')->first());
+//        $user
+//            ->roles()
+//            ->attach(Role::where('title', 'mod')->first());
 
 
 

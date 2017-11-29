@@ -10,14 +10,14 @@ use App\User;
 class UsersController extends Controller
 {
 
-//    public function __construct(User $users)
-//    {
-//
-//        $this->middleware('auth')->except(['index', 'show']);
-//        //$this->middleware('guest', ['except' => 'index','show']);
-//
-//
-//    }
+    public function __construct(User $users)
+    {
+
+        $this->middleware('auth');
+        //$this->middleware('guest', ['except' => 'index','show']);
+
+
+    }
 
 
 

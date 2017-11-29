@@ -8,6 +8,16 @@ use App\Theme;
 
 class ThemesController extends Controller
 {
+
+    public function __construct(User $users)
+    {
+
+        $this->middleware('auth');
+        //$this->middleware('guest', ['except' => 'index','show']);
+
+
+    }
+
     public function index(){
 
 

@@ -28,10 +28,12 @@
             <thead>
                 <th>ID</th>
                 <th>First Name</th>
-                <th>Last Name</th>
                 <th>E-Mail</th>
                 <th>Time Created</th>
                 <th>Time Updated</th>
+                <th>Admin</th>
+                <th>Theme Manager</th>
+                <th>Mod</th>
             </thead>
             <tbody>
             {{--@foreach ($users as $user)--}}
@@ -44,9 +46,9 @@
                         <td> {{ $user->email }}</td>
                         <td> {{ $user->created_at }}</td>
                         <td> {{ $user->updated_at }}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="checkbox" {{ $user->hasRole('admin') ? 'checked' : '' }}></td>
+                        <td><input type="checkbox" {{ $user->hasRole('theme manager') ? 'checked' : '' }}></td>
+                        <td><input type="checkbox" {{ $user->hasRole('mod') ? 'checked' : '' }}></td>
                         <td><button type="submit">Update</button></td>
 
                         @include('layouts.errors')
@@ -57,7 +59,7 @@
 
             </tbody>
 
-
+            {{--$user->roles()->where('title', 'admin') ? 'checked' : ''--}}
 
 
         </table>
