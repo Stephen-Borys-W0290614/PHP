@@ -1,8 +1,8 @@
-@if(Auth::user()->isAdministrator())
+{{--@if(Auth::user()->isAdministrator())--}}
 
-@else
-    <script>window.location = "/home";</script>
-@endif
+{{--@else--}}
+    {{--<script>window.location = "/home";</script>--}}
+{{--@endif--}}
 
 @extends ('layouts.masterMain')
 

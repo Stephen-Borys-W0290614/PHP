@@ -14,20 +14,16 @@ class CheckRole //Check laravel docs for check role
      * @param  ...$roles
      * @return mixed
      */
-    public function handle($request, Closure $next, ...$roles)
+    public function handle($request, Closure $next)
     {
-        if (!$request->user()) {
-            return redirect('/');
+        if ($request->user() === null) {
+            return redirect('/home');
         }
-        foreach ($roles as $role) {
-
-            if ($request->user()->hasRole($role)) {
-                return $next($request);
-            }
-
+        $actions = $request->route()->getAction();
+        $roles = isset($actions['roles']) ? $actions['roles'] : null;
+        if ($request->user()->hasAnyRole($roles) || !$roles) {
+            return $next($request);
         }
-
-        return redirect('/');
+        return redirect('/home');
     }
-
 }

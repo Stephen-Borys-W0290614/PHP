@@ -23,10 +23,26 @@ Route::get('/home', 'PostsController@index')->name('home');
 Route::get('/', 'PostsController@index')->name('home');
 
 
-Route::get('/users', 'UsersController@index')->middleware('auth');
+//Route::get('/users', 'UsersController@index')->middleware('auth');
+
+Route::get('/users', [
+    'uses' => 'UsersController@index',
+    'as' => 'admin',
+    'middleware' => 'roles',
+    'roles' => ['admin']
+]);
 
 
-Route::post('/users', 'UsersController@store')->middleware('auth');
+
+//Route::post('/users', 'UsersController@store')->middleware('auth');
+
+
+Route::post('/users', [
+    'uses' => 'UsersController@store',
+    'as' => 'admin',
+    'middleware' => 'roles',
+    'roles' => ['admin']
+]);
 
 
 Route::post('/users/searched', 'SearchController@search');
@@ -35,12 +51,30 @@ Route::post('/users/searched', 'SearchController@search');
 Route::get('/users/edit/{user}', 'UsersController@show');
 
 
+Route::post('/users/update', 'AdminController@postAdminAssignRoles');
+
+
+Route::get('/admin', [
+    'uses' => 'AppController@getAdminPage',
+    'as' => 'admin',
+    'middleware' => 'roles',
+    'roles' => ['admin']
+]);
+
+Route::post('/admin', [
+    'uses' => 'AppController@postAdminAssignRoles',
+    'middleware' => 'roles',
+    'roles' => ['admin']
+]);
+
+
+
 
 Route::get('/themes', 'ThemesController@index');
 
 
 
-Route::get('/admin','AdminController@adminPage');
+//Route::get('/admin','AdminController@adminPage');
 
 
 

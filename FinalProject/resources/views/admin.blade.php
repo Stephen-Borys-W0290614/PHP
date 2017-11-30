@@ -16,10 +16,9 @@
                 <form action="/admin" method="post">
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}} <input type="hidden" name="email" value=" {{$user->email}}"></td>
-                    <td><input type="checkbox" {{$user->hasRole('User') ? 'checked' : '' }} name="role_User"></td>
-                    <td><input type="checkbox" {{$user->hasRole('Administrator') ? 'checked' : '' }} name="role_admin"></td>
-                    <td><input type="checkbox" {{$user->hasRole('ThemeManager') ? 'checked' : '' }} name="role_theme"></td>
-                    <td><input type="checkbox" {{$user->hasRole('Moderator') ? 'checked' : '' }} name="role_mod"></td>
+                    <td><input type="checkbox" {{$user->hasRole('admin') ? 'checked' : '' }} name="role_admin"></td>
+                    <td><input type="checkbox" {{$user->hasRole('theme manager') ? 'checked' : '' }} name="role_theme"></td>
+                    <td><input type="checkbox" {{$user->hasRole('mod') ? 'checked' : '' }} name="role_mod"></td>
 
                     {{csrf_field() }}
                     <td><button type="submit">Assign Roles</button> </td>
