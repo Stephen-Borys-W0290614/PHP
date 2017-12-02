@@ -99,7 +99,7 @@ Route::post('/posts', 'PostController@store');
 Route::get('/posts/{post}', 'PostController@show');
 
 
-Route::get('/posts/tags/{tag}', 'TagsController@index');
+//Route::get('/posts/tags/{tag}', 'TagsController@index');
 
 
 Route::post('/posts/{post}/comments', 'CommentsController@store');
@@ -124,3 +124,12 @@ Route::post('/login', 'SessionsController@store');
 
 Route::get('/logout', 'SessionsController@destroy');
 
+
+
+Route::get('password/reset/{token?}', 'Auth\ResetPasswordController@showResetForm');
+
+
+Route::post('password/email', 'Auth\ResetPasswordController@sendResetLinkEmail');
+
+
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');

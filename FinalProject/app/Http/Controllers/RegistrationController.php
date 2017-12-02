@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Mail;
+//use Mail;
 
 use App\User;
 
@@ -46,6 +46,10 @@ class RegistrationController extends Controller
 
 
        auth()->login($user);
+
+
+
+       \Mail::to($user)->send(new Welcome($user));
 
 //       $user = User::create(request(['name', 'email', bcrypt('password')]));
 
