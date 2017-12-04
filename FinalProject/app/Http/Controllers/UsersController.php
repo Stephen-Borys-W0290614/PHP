@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\User;
 
+use DB;
+
 
 class UsersController extends Controller
 {
@@ -74,6 +76,15 @@ class UsersController extends Controller
         $theSearch = true;
 
         return view('users.searched', compact('user', 'theSearch'));
+
+    }
+
+
+    public function destroy($user_id){
+
+        $user = User::where('id', $user_id)->first();
+        $user->delete();
+        return redirect()->route('home');
 
     }
 }

@@ -55,6 +55,15 @@ Route::post('/users/searched', [
 ]);
 
 
+
+Route::get('/users/delete/{user_id}', [
+    'uses' => 'UsersController@destroy' ,
+    'as' => 'users.delete' ,
+    'roles' => 'admin'
+]);
+
+
+
 Route::get('/users/edit/{user}', 'UsersController@show');
 
 
@@ -110,6 +119,14 @@ Route::get('/posts/{post}', 'PostController@show');
 
 
 Route::post('/posts/{post}/comments', 'CommentsController@store');
+
+
+
+Route::get('/posts/delete/{post_id}', [
+    'uses' => 'PostController@destroy' ,
+    'as' => 'posts.delete' ,
+    'roles' => 'mod'
+]);
 
 
 

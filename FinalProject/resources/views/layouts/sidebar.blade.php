@@ -4,6 +4,11 @@
         @if (Auth::check())
             <a class="nav-link" href="/posts/create">Create A Post</a>
 
+            @if(Auth::user()->isMod())
+            <a class="nav-link" href="/posts/deleted">View deleted Posts</a>
+
+            @endif
+
         @endif
 
         @if (! Auth::check())

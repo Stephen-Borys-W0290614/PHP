@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Post;
 
+use DB;
+
 use App\Repositories;
 
 use Illuminate\Database\Query\Builder;
@@ -109,6 +111,15 @@ class PostController extends Controller
         // And then redirect to the home page
 
         return redirect('/posts');
+
+    }
+
+
+    public function destroy($post_id){
+
+        $post = Post::where('id', $post_id)->first();
+        $post->delete();
+        return redirect()->route('home');
 
     }
 

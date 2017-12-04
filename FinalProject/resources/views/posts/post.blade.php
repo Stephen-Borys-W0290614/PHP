@@ -26,12 +26,15 @@
 
     @if(Auth::user()->isMod())
 
-        <form action="/posts/delete" method="POST">
+        <form action="{{ route('posts.delete', ['post_id' => $post->id]) }}" method="GET">
             {{ csrf_field() }}
 
 
             <button type="submit" class="btn btn-default">Delete</button>
         </form>
+
+
+            {{--<a href="{{ route('posts.delete', ['post_id' => $post->id]) }}">Delete</a>--}}
 
         @endif
         @endif

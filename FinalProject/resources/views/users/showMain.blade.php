@@ -31,7 +31,12 @@
 
                     {{csrf_field() }}
                     <td><button type="submit">Assign Roles</button> </td>
-                    <td><button type="submit">Delete</button> </td>
+                    <form action="{{ route('users.delete', ['user_id' => $user->id]) }}" method="GET">
+                        {{ csrf_field() }}
+
+
+                        <td><button type="submit" class="btn btn-default">Delete</button></td>
+                    </form>
                 </form>
             </tr>
         {{--@endforeach--}}

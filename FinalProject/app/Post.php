@@ -5,8 +5,19 @@ namespace App;
 
 use Carbon\Carbon;
 
+
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 class Post extends Model
 {
+
+    use SoftDeletes;
+
+    protected $table = 'posts';
+
+    protected $fillable = ['title', 'body'];
+
+    protected $dates = ['deleted_at'];
 
     public function comments(){
 

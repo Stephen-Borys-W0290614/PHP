@@ -4,12 +4,17 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes; //Here is where you import softdeletes
+
 
 //use App\Role;
 
 
 class User extends Authenticatable
 {
+    use SoftDeletes;
+
+
     use Notifiable;
 
     //protected $primaryKey = 'UserID';
@@ -32,6 +37,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+//This is for soft deletes
+    protected $dates = ['deleted_at'];
+
 
 //
 //    public function roles()
