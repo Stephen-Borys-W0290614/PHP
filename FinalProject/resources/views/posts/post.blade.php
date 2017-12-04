@@ -21,4 +21,18 @@
 
     <h4>{{ $post->body }}</h4>
 
+    @if (Auth::check())
+
+
+    @if(Auth::user()->isMod())
+
+        <form action="/posts/delete" method="POST">
+            {{ csrf_field() }}
+
+
+            <button type="submit" class="btn btn-default">Delete</button>
+        </form>
+
+        @endif
+        @endif
 </div>

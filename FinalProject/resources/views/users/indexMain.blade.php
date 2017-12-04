@@ -1,74 +1,87 @@
-{{--@if(Auth::user()->isAdministrator())--}}
+@extends('layouts.masterMain')
 
-{{--@else--}}
-    {{--<script>window.location = "/home";</script>--}}
-{{--@endif--}}
 
-@extends ('layouts.masterMain')
 
 
 @section('content')
 
-    {{--@if(Auth::user()->isAdministrator())--}}
+    @if(Auth::user()->isAdministrator())
+    @else
+        <script>window.location = "/home";</script>
+    @endif
 
-    {{--@else--}}
-        {{--<script>window.location = "/home";</script>--}}
-    {{--@endif--}}
+    <div class="col-sm-8 blog-main">
 
-    {{--<div class="col-md-6 text-right">--}}
-        {{--<form method="POST" action="/users/searched">--}}
+        <form action="/users/searched" method="POST">
+            {{ csrf_field() }}
 
-            {{--{{ csrf_field() }}--}}
-
-        {{--<form action="{{ route('users.indexMain') }}" method="get" class="form-inline">--}}
-            {{--<div class="form-group">--}}
-
-            {{--<input type="text" class="form-control" name="search" placeholder="Keyword" value="{{ isset($search) ? $search : '' }}">--}}
-    {{--</div>--}}
-
-    {{--<div class="form-group">--}}
-        {{--<button class="btn btn-success" type="submit">Search</button>--}}
-    {{--</div>--}}
-
-    {{--</form>--}}
-
-
-    {{--</div>--}}
-
-    <form action="/users/searched" method="POST">
-        {{ csrf_field() }}
-
-        <div class="form-group">
-            <label for="search">Search Users:</label>
-            <input type="text" class="form-control" id="search" placeholder="Search"
-                   name="search">
-        </div>
-        <button type="submit" class="btn btn-default">Search</button>
-    </form>
-
-
-    <div class="row">
-
-        <div class="col-sm-8 blog-main">
-
-            @foreach($users as $user)
-
-
-                @include('users.user')
+            <div class="form-group">
+                <label for="search">Search Users:</label>
+                <input type="text" class="form-control" id="search" placeholder="Search"
+                       name="search">
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+        </form>
 
 
 
+        {{--<h1>{{ $user->id }}</h1>--}}
+
+        {{--<h1>{{ $user->name }} </h1>--}}
+
+        {{--<h1>{{ $user->email }} </h1>--}}
+
+        {{--<h1>{{ $user->created_at }}</h1>--}}
+
+        {{--<h1>{{ $user->updated_at }}</h1>--}}
+
+        <table>
+            <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>E-Mail</th>
+            <th>Time Created</th>
+            <th>Time Updated</th>
+            </thead>
+            <tbody>
+            @foreach ($users as $user)
+                @if(count($user->roles) > 0)
+
+                    <tr>
+
+                        <form method="GET" action="/users/edit/{{ $user->id }}">
+
+                            {{ csrf_field() }}
+                            <td> {{ $user->id }}</td>
+                            <td> {{ $user->name }}</td>
+                            <td> {{ $user->email }}</td>
+                            <td> {{ $user->created_at }}</td>
+                            <td> {{ $user->updated_at }}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><button type="submit">Update</button></td>
+
+                            @include('layouts.errors')
+
+                        </form>
+                    </tr>
+                @endif
             @endforeach
 
-            <nav class="blog-pagination">
-                <a class="btn btn-outline-primary" href="#">Older</a>
-                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
-            </nav>
-                {{--{{ $categories->appends(['search' => $search]) }}--}}
+            </tbody>
 
 
-        </div><!-- /.blog-main -->
-        @include('layouts.sidebar')
+
+
+        </table>
+
+
+
+
+
+
     </div>
-    </main><!-- /.container -->
+    @include('layouts.sidebar')
+
 @endsection

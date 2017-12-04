@@ -45,7 +45,14 @@ Route::post('/users', [
 ]);
 
 
-Route::post('/users/searched', 'SearchController@search');
+//Route::post('/users/searched', 'SearchController@search');
+
+
+Route::post('/users/searched', [
+    'uses' => 'SearchController@search',
+    'middleware' => 'roles',
+    'roles' => ['admin']
+]);
 
 
 Route::get('/users/edit/{user}', 'UsersController@show');

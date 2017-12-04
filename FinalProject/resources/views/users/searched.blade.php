@@ -27,8 +27,7 @@
         <table>
             <thead>
             <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>Name</th>
             <th>E-Mail</th>
             <th>Time Created</th>
             <th>Time Updated</th>
@@ -36,7 +35,7 @@
             <tbody>
             @foreach ($users as $user)
             <tr>
-                <form method="POST" action="/users">
+                <form method="GET" action="/users/edit/{{ $user->id }}">
 
                     {{ csrf_field() }}
                     <td> {{ $user->id }}</td>
