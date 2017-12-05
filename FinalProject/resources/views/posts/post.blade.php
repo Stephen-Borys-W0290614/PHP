@@ -11,6 +11,14 @@
     </h1>
 
 
+
+
+            <img src="{{asset('images/'.$post->image)}}" alt="Card image cap" height="140" width="206"/><br>
+            <p class="card-text"></p>
+
+
+
+
     <p class="blog-post-meta">
 
         {{ $post->user->name }} on

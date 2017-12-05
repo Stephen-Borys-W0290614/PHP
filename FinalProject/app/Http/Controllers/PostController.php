@@ -10,6 +10,8 @@ use DB;
 
 use App\Repositories;
 
+use Image;
+
 use Illuminate\Database\Query\Builder;
 
 use Carbon\Carbon;
@@ -61,7 +63,7 @@ class PostController extends Controller
 
     }
 
-    public function store(){
+    public function store(Request $request){
 
         //dd(request()->all());
 
@@ -82,33 +84,34 @@ class PostController extends Controller
         $this->validate(request(), [
            'title' => 'required|max:25',
 
-           'body' => 'required'
+           'body' => 'required',
+
+            'urlimage'=>'required'
         ]);
 
 
+        $post = new Post();
 
-            auth()->user()->publish(
-            new Post(request(['title', 'body']))
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->user_id = auth()->id();
+        $img = $request->urlimage;
+        $imgName = basename($img);
+        $Location = public_path('images/'.$imgName);
+        Image::make($img)->resize('356','280')->save($Location);
 
-        );
+        $post->image = $imgName;
 
-//        Post::create([
+        $post->save();
+        //save it to database
 
-//            'title' => request('title') ,
-
-//          'body' => request('body'),
-
-//            'user_id' => auth()->id()
-
-//        ]);
-
-        //FLAS MESSAGE
+        //returns to the main page
 
         session()->flash('message', 'Your Post Has Now Been Published');
 
 
 
-        // And then redirect to the home page
+        // And then redirect to the post page
 
         return redirect('/posts');
 
@@ -118,7 +121,15 @@ class PostController extends Controller
     public function destroy($post_id){
 
         $post = Post::where('id', $post_id)->first();
+
+        $post->deleted_by = auth()->id();
+
+        $post->update();
+
         $post->delete();
+
+
+
         return redirect()->route('home');
 
     }

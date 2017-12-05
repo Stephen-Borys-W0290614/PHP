@@ -1,6 +1,6 @@
 @extends('layouts.masterMain')
 
-
+{{--<script src="{{ URL::asset('js/video') }}"></script>--}}
 
 
 @section('content')
@@ -17,7 +17,8 @@
         <th>Admin</th>
         <th>Theme Manager</th>
         <th>Moderator</th>
-        <th></th>
+        <th>Assign Role</th>
+        <th>Delete</th>
         </thead>
         <tbody>
         {{--@foreach($users as $user)--}}
@@ -39,6 +40,7 @@
                     </form>
                 </form>
             </tr>
+
         {{--@endforeach--}}
         </tbody>
     </table>

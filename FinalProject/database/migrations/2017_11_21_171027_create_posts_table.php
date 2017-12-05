@@ -28,10 +28,16 @@ class CreatePostsTable extends Migration
             $table->text('body');
 
 
+            $table->string('image');
+
+
             $table->timestamps();
 
 
             $table->softDeletes();
+
+
+            $table->integer('deleted_by')->nullable();
 
 
         });

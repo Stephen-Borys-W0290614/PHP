@@ -9,6 +9,9 @@
 
         <h1>{{ $post->title }}</h1>
 
+        <img src="{{asset('images/'.$post->image)}}" alt="Card image cap" height="140" width="206"/><br>
+        <p class="card-text"></p>
+
 
         @if (count($post->tags))
 
@@ -23,6 +26,8 @@
 
                                 {{ $tag->name }}
 
+
+
                         </a>
 
                     </li>
@@ -35,6 +40,8 @@
         @endif
 
         {{ $post->body}}
+
+
 
 
         <hr>

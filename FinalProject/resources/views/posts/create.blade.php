@@ -28,10 +28,13 @@
             </div>
 
             <div class="form-group">
+                <label for="url">Image Url</label>
+                <input type="text" id="urlimage" name="urlimage" class="form-control" >
+            </div>
+
 
             <button type="submit" class="btn btn-primary">Publish</button>
 
-            </div>
 
             @include ('layouts.errors')
 
