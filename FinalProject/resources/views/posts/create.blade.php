@@ -29,7 +29,7 @@
 
             <div class="form-group">
                 <label for="url">Image Url</label>
-                <input type="text" id="urlimage" name="urlimage" class="form-control" >
+                <input type="url" pattern="^https?://(?:[a-z0-9\-]+\.)+[a-z]{2,6}(?:/[^/#?]+)+\.(?:jpg|gif|png)$" id="urlimage" name="urlimage" class="form-control" >
             </div>
 
 

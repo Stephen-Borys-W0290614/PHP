@@ -24,19 +24,19 @@ class RegistrationController extends Controller
     }
 
 
-    public function store(){
+    public function store(RegistrationRequest $form){
 
 
-//        $form->persist();
-
-        $user = User::create([
-
-            'name' => request('name'),
-
-            'email' => request('email'),
-
-           'password' => bcrypt(request('password'))
-     ]);
+        $form->persist();
+//
+//        $user = User::create([
+//
+//            'name' => request('name'),
+//
+//            'email' => request('email'),
+//
+//           'password' => bcrypt(request('password'))
+//     ]);
 //        $user
 //            ->roles()
 //            ->attach(Role::where('title', 'mod')->first());
@@ -45,11 +45,11 @@ class RegistrationController extends Controller
 
 
 
-       auth()->login($user);
+//       auth()->login($user);
 
 
 
-       \Mail::to($user)->send(new Welcome($user));
+//       \Mail::to($user)->send(new Welcome($user));
 
 //       $user = User::create(request(['name', 'email', bcrypt('password')]));
 

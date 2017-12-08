@@ -68,16 +68,7 @@ class UsersController extends Controller
     }
 
 
-    public function search(Request $request){
 
-        $user = User::where('name', 'like', '%' . $request['search'] . '%')
-            ->orwhere('email', 'like', '%' . $request['search'] . '%');
-
-        $theSearch = true;
-
-        return view('users.searched', compact('user', 'theSearch'));
-
-    }
 
 
     public function destroy($user_id){

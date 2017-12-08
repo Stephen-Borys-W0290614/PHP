@@ -129,6 +129,9 @@ class PostController extends Controller
         $post->delete();
 
 
+        session()->flash('message', 'Post Deleted!');
+
+
 
         return redirect()->route('home');
 

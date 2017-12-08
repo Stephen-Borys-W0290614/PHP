@@ -34,7 +34,7 @@ class RegistrationRequest extends FormRequest
         return [
             'name' => 'required|max:55',
 
-            'email' => 'required|email|max:255',
+            'email' => 'required|email|max:255|unique:users,email',
 
             'password' => 'required|confirmed|max:255'
 
@@ -43,30 +43,30 @@ class RegistrationRequest extends FormRequest
     }
 
 
-//    public function persist(){
-//
-//        $user = User::create([
-//
-//            'name' => request('name'),
-//
-//            'email' => request('email'),
-//
-//            'password' => bcrypt(request('password'))
-//
-//        ]);
-//
+    public function persist(){
+
+        $user = User::create([
+
+            'name' => request('name'),
+
+            'email' => request('email'),
+
+            'password' => bcrypt(request('password'))
+
+        ]);
+
 //        $user
 //            ->roles()
 //            ->attach(Role::where('name', 'employee')->first());
 //        return $user;
-//
-//
-//
-//        //Sign them in.
-//
-//        auth()->login($user);
-//
-//
-//        //\Mail::to($user)->send(new WelcomeAgain($user));
-//    }
+
+
+
+        //Sign them in.
+
+        auth()->login($user);
+
+
+        //\Mail::to($user)->send(new WelcomeAgain($user));
+    }
 }

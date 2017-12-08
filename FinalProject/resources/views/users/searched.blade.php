@@ -12,6 +12,17 @@
 
     <div class="col-sm-8 blog-main">
 
+        <form action="/users/searched" method="POST">
+            {{ csrf_field() }}
+
+            <div class="form-group">
+                <label for="search">Search Users:</label>
+                <input type="text" class="form-control" id="search" placeholder="Search"
+                       name="search">
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+        </form>
+
 
 
         {{--<h1>{{ $user->id }}</h1>--}}

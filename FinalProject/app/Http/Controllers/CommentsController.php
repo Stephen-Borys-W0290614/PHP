@@ -52,6 +52,10 @@ class CommentsController extends Controller
             'body' => 'required|min:2'
         ]);
         $post->addComment(request('body'));
+
+        session()->flash('message', 'Comment Complete');
+
+
         return back(); // Nice helper function to return to prev. page.
     }
 
