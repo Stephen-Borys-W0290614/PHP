@@ -101,8 +101,20 @@ class UsersController extends Controller
     public function destroy($user_id){
 
         $user = User::where('id', $user_id)->first();
+
+
+
+        $user->deleted_by = auth()->id();
+
+        $user->update();
+
         $user->delete();
-        return redirect()->route('home');
+
+        session()->flash('message', 'User Deleted!');
+
+
+        return redirect('/users');
+
 
     }
 }

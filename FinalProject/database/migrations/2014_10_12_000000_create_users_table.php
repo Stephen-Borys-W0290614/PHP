@@ -42,6 +42,9 @@ class CreateUsersTable extends Migration
             $table->softDeletes();
 
 
+            $table->integer('deleted_by')->nullable();
+
+
 
         });
     }
