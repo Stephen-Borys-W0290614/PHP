@@ -15,7 +15,11 @@
 
             Updated: {{ $user->updated_at }}
 
-            <a href="/users/edit/{{ $user->id }}"> Edit User</a>
+            <a href="/users/edit/{{ $user->id }}"> Edit User Role</a>
+
+
+            <a href="/users/update/{{ $user->id }}"> Edit User Info</a>
+
 
             ===========================
 

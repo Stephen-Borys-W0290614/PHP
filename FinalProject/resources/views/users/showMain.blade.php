@@ -12,7 +12,7 @@
 
     <table border="1" >
         <thead>
-        <th>First Name</th>
+        <th>Name</th>
         <th>Email</th>
         <th>Admin</th>
         <th>Theme Manager</th>
@@ -24,7 +24,8 @@
         {{--@foreach($users as $user)--}}
             <tr>
                 <form action="/admin" method="post">
-                    <td>{{$user->name}}</td>
+
+                    <td>{{$user->name}} <input type="hidden" name="email" value=" {{$user->name}}"></td>
                     <td>{{$user->email}} <input type="hidden" name="email" value=" {{$user->email}}"></td>
                     <td><input type="checkbox" {{$user->hasRole('admin') ? 'checked' : '' }} name="role_admin"></td>
                     <td><input type="checkbox" {{$user->hasRole('theme manager') ? 'checked' : '' }} name="role_theme"></td>

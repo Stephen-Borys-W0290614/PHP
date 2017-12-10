@@ -68,6 +68,33 @@ class UsersController extends Controller
     }
 
 
+    public function showUpdate(User $user){
+
+        return view('users.update', compact('user'));
+
+
+    }
+
+
+    public function update($id){
+
+     $this->validate(request(), [
+         'name' => 'required',
+         'email' => 'required'
+     ]);
+
+     $data = array(
+         'name' => request('name'),
+         'email' => request('email')
+     );
+
+     User::where('id', $id)->update($data);
+
+     return redirect('/users');
+
+
+    }
+
 
 
 

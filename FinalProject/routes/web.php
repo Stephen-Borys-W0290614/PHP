@@ -30,7 +30,7 @@ Route::get('/users', [
     'as' => 'admin',
     'middleware' => 'roles',
     'roles' => ['admin']
-]);
+])->name('users');
 
 
 
@@ -157,3 +157,24 @@ Route::post('password/email', 'Auth\ResetPasswordController@sendResetLinkEmail')
 
 
 Route::post('/password/reset', 'ResetPasswordController@reset');
+
+
+//Route::post('/users/update/{id}', 'UsersController@update');
+
+
+
+Route::get('/users/update/{user}', [
+    'uses' => 'UsersController@showUpdate' ,
+    'middleware' => 'roles',
+    'roles' => ['admin']
+]);
+
+
+Route::post('/users/update/{id}', [
+    'uses' => 'UsersController@update' ,
+    'middleware' => 'roles',
+    'roles' => ['admin']
+]);
+
+
+
