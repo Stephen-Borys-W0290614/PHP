@@ -12,6 +12,11 @@ use Image;
 
 use App\Post;
 
+use Validator;
+
+
+use Illuminate\Support\Facades\Redirect;
+
 class ProfileController extends Controller
 {
     public function index()
@@ -36,6 +41,21 @@ class ProfileController extends Controller
     public function store(Request $request)
     {
 
+
+        $rules = array(
+            'avatar' => 'required | mimes:jpeg,jpg,png | max:1000',
+        );
+
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return Redirect::back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+
         //This is to handle the user upload for avatar
 
         if ($request->hasFile('avatar')) {
@@ -54,10 +74,10 @@ class ProfileController extends Controller
         $user = Auth::user();
         $posts = $user->posts()->latest()->get();
 
-        return view('users.profile',array("user" => $user, "posts" => $posts));
-
+        return view('users.profile', array("user" => $user, "posts" => $posts));
 
     }
+
 
 
     public function update(User $user)

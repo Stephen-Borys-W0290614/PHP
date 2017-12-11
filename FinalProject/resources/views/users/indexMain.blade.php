@@ -35,13 +35,14 @@
 
         {{--<h1>{{ $user->updated_at }}</h1>--}}
 
-        <table>
+        <table border="1">
             <thead>
             <th>ID</th>
             <th>Name</th>
             <th>E-Mail</th>
             <th>Time Created</th>
             <th>Time Updated</th>
+            <th>Update</th>
             </thead>
             <tbody>
             @foreach ($users as $user)
@@ -57,9 +58,8 @@
                             <td> {{ $user->email }}</td>
                             <td> {{ $user->created_at }}</td>
                             <td> {{ $user->updated_at }}</td>
-                            <td></td>
 
-                            <td><a href="/users/update/{{ $user->id }}"> Edit User Info</a></td>
+
                             <td><button type="submit">Update</button></td>
 
 

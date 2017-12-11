@@ -19,6 +19,8 @@
         <th>Moderator</th>
         <th>Assign Role</th>
         <th>Delete</th>
+
+        <th>Edit Info</th>
         </thead>
         <tbody>
         {{--@foreach($users as $user)--}}
@@ -37,11 +39,16 @@
                     </form>
                 <form action="{{ route('users.delete', ['user_id' => $user->id]) }}" method="GET">
                     {{ csrf_field() }}
-
-                    <td><a href="/users/update/{{ $user->id }}"> Edit User Info</a></td>
-
-                    <td><button type="submit" class="btn btn-default">Delete</button></td>
+                    <td><button type="submit" >Delete</button></td>
                 </form>
+
+                <form action="/users/update/{{ $user->id }}" method="GET">
+                {{ csrf_field() }}
+                <td><button type="submit" >Edit User Info</button></td>
+                </form>
+
+
+
             </tr>
 
         {{--@endforeach--}}

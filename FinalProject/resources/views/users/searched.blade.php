@@ -1,6 +1,6 @@
 @extends('layouts.masterMain')
 
-
+{{--<script src="{{ URL::asset('js/video') }}"></script>--}}
 
 
 @section('content')
@@ -10,74 +10,50 @@
         <script>window.location = "/home";</script>
     @endif
 
-    <div class="col-sm-8 blog-main">
+    <table border="1" >
+        <thead>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Admin</th>
+        <th>Theme Manager</th>
+        <th>Moderator</th>
+        <th>Assign Role</th>
+        <th>Delete</th>
 
-        <form action="/users/searched" method="POST">
-            {{ csrf_field() }}
+        <th>Edit Info</th>
+        </thead>
+        <tbody>
+        @foreach($users as $user)
+        <tr>
+            <form action="/admin" method="post">
 
-            <div class="form-group">
-                <label for="search">Search Users:</label>
-                <input type="text" class="form-control" id="search" placeholder="Search"
-                       name="search">
-            </div>
-            <button type="submit" class="btn btn-default">Search</button>
-        </form>
+                <td>{{$user->name}} <input type="hidden" name="email" value=" {{$user->name}}"></td>
+                <td>{{$user->email}} <input type="hidden" name="email" value=" {{$user->email}}"></td>
+                <td><input type="checkbox" {{$user->hasRole('admin') ? 'checked' : '' }} name="role_admin"></td>
+                <td><input type="checkbox" {{$user->hasRole('theme manager') ? 'checked' : '' }} name="role_theme"></td>
+                <td><input type="checkbox" {{$user->hasRole('mod') ? 'checked' : '' }} name="role_mod"></td>
 
+                {{csrf_field() }}
+                <td><button type="submit">Assign Roles</button> </td>
 
+            </form>
+            <form action="{{ route('users.delete', ['user_id' => $user->id]) }}" method="GET">
+                {{ csrf_field() }}
+                <td><button type="submit" >Delete</button></td>
+            </form>
 
-        {{--<h1>{{ $user->id }}</h1>--}}
-
-        {{--<h1>{{ $user->name }} </h1>--}}
-
-        {{--<h1>{{ $user->email }} </h1>--}}
-
-        {{--<h1>{{ $user->created_at }}</h1>--}}
-
-        {{--<h1>{{ $user->updated_at }}</h1>--}}
-
-        <table>
-            <thead>
-            <th>ID</th>
-            <th>Name</th>
-            <th>E-Mail</th>
-            <th>Time Created</th>
-            <th>Time Updated</th>
-            </thead>
-            <tbody>
-            @foreach ($users as $user)
-            <tr>
-                <form method="GET" action="/users/edit/{{ $user->id }}">
-
-                    {{ csrf_field() }}
-                    <td> {{ $user->id }}</td>
-                    <td> {{ $user->name }}</td>
-                    <td> {{ $user->email }}</td>
-                    <td> {{ $user->created_at }}</td>
-                    <td> {{ $user->updated_at }}</td>
-                    <td></td>
-                    <td></td>
-                    <td><a href="/users/update/{{ $user->id }}"> Edit User Info</a></td>
-                    <td><button type="submit">Update</button></td>
-
-                    @include('layouts.errors')
-
-                </form>
-            </tr>
-            @endforeach
-
-            </tbody>
+            <form action="/users/update/{{ $user->id }}" method="GET">
+                {{ csrf_field() }}
+                <td><button type="submit" >Edit User Info</button></td>
+            </form>
 
 
 
+        </tr>
 
-        </table>
+        @endforeach
+        </tbody>
 
-
-
-
-
-
-    </div>
-    @include('layouts.sidebar')
+    </table>
 
 @endsection

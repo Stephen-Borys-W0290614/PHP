@@ -25,6 +25,8 @@ class PostController extends Controller
         $this->middleware('auth')->except(['index', 'show']);
         //$this->middleware('guest', ['except' => 'index','show']);
 
+        //This is to make sure the user is logged in
+
 
     }
 
@@ -46,6 +48,8 @@ class PostController extends Controller
 
         return view('posts.indexMain', compact('posts'));
 
+        //This is to show posts from the most new to most old
+
     }
 
 
@@ -60,6 +64,8 @@ class PostController extends Controller
     public function create(){
 
         return view('posts.create');
+
+        //This will like you to the page to create posts
 
     }
 
@@ -86,7 +92,7 @@ class PostController extends Controller
 
            'body' => 'required',
 
-            'urlimage'=>'required'
+            'urlimage'=>'required '
         ]);
 
 
@@ -99,6 +105,9 @@ class PostController extends Controller
         $imgName = basename($img);
         $Location = public_path('images/'.$imgName);
         Image::make($img)->resize('356','280')->save($Location);
+
+        //This will take the url, change its name for storing,
+        //Then add the new name to the database and resize the image
 
         $post->image = $imgName;
 
@@ -114,6 +123,8 @@ class PostController extends Controller
         // And then redirect to the post page
 
         return redirect('/posts');
+
+        //This is what is used to save pictures
 
     }
 
@@ -135,6 +146,8 @@ class PostController extends Controller
 
         return redirect()->route('home');
 
+
+        //This will soft delete a post, and update the database with who deleted them
     }
 
 
@@ -143,6 +156,8 @@ class PostController extends Controller
         $count = Post::get()->count();
 
         return response()->json(['count' => $count]);
+
+        //This is what is used for polling
     }
 
 
