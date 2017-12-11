@@ -56,7 +56,7 @@
                     <td> {{ $user->updated_at }}</td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    <td><a href="/users/update/{{ $user->id }}"> Edit User Info</a></td>
                     <td><button type="submit">Update</button></td>
 
                     @include('layouts.errors')

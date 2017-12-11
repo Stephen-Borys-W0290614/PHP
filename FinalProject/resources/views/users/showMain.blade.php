@@ -38,6 +38,7 @@
                 <form action="{{ route('users.delete', ['user_id' => $user->id]) }}" method="GET">
                     {{ csrf_field() }}
 
+                    <td><a href="/users/update/{{ $user->id }}"> Edit User Info</a></td>
 
                     <td><button type="submit" class="btn btn-default">Delete</button></td>
                 </form>

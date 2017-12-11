@@ -93,7 +93,23 @@ class UsersController extends Controller
 
      User::where('id', $id)->update($data);
 
-     return redirect('/users');
+
+     $user = User::where('id', $id)->first();
+
+
+
+        $user->last_modified_by = auth()->id();
+
+
+        $user->update();
+
+
+        session()->flash('message', 'User Updated!');
+
+
+
+
+        return redirect('/users');
 
 
     }
