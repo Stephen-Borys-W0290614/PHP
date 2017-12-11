@@ -107,8 +107,15 @@
                             </div>
                         </div>
                     @endif
+                    <div class="dropdown ml-auto">
+                        <button class="dropbtn ">{{ Auth::user()->name }}</button>
+                        <div class="dropdown-content">
+                            <a href="/profile">User Page</a>
+                            <a href="/logout">Logout</a>
 
-                    <a class="nav-link ml-auto" href="#">{{ Auth::user()->name }}</a>
+                        </div>
+                    </div>
+                    {{--<a class="nav-link ml-auto" href="#">{{ Auth::user()->name }}</a>--}}
 
 
 

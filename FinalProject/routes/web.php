@@ -63,6 +63,20 @@ Route::get('/users/delete/{user_id}', [
 ]);
 
 
+Route::get('profile', 'ProfileController@index')->middleware('auth');
+
+
+
+Route::post('profile', 'ProfileController@store')->middleware('auth');
+
+
+
+Route::get('profile/update/{user}', 'ProfileController@update')->middleware('auth');
+
+
+Route::post('profile/update/{id}', 'ProfileController@updateProfile')->middleware('auth');
+
+
 
 Route::get('/users/edit/{user}', 'UsersController@show');
 
@@ -175,6 +189,9 @@ Route::post('/users/update/{id}', [
     'middleware' => 'roles',
     'roles' => ['admin']
 ]);
+
+
+Route::get('/posts-count', 'PostController@pollPosts');
 
 
 

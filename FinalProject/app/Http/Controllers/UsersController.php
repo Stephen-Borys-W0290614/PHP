@@ -9,6 +9,9 @@ use App\User;
 use DB;
 
 
+use Auth;
+
+
 class UsersController extends Controller
 {
 
@@ -97,11 +100,32 @@ class UsersController extends Controller
 
 
 
+//    public function profile(){
+//
+//        return view('users.profile', array('user' => Auth::user()));
+//
+//    }
+
+
+
 
     public function destroy($user_id){
 
+
+
+
         $user = User::where('id', $user_id)->first();
 
+
+        if($user->name == 'Big Boss' || Auth::user()->id == $user->id){
+
+
+            session()->flash('message', 'User Cannot Be Deleted!');
+
+
+            return redirect('/users');
+
+        }
 
 
         $user->deleted_by = auth()->id();

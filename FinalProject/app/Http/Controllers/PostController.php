@@ -138,5 +138,13 @@ class PostController extends Controller
     }
 
 
+    public function pollPosts()
+    {
+        $count = Post::get()->count();
+
+        return response()->json(['count' => $count]);
+    }
+
+
 
 }

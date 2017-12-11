@@ -1,4 +1,15 @@
 <aside class="col-sm-3 ml-sm-auto blog-sidebar">
+
+    <div class="dropdown">
+        <button class="dropbtn">Theme Manager Controls</button>
+        <div class="dropdown-content">
+            <a href="#">Cosmo</a>
+            <a href="#">Darkly</a>
+            <a href="#">Cyborg</a>
+
+
+        </div>
+    </div>
     <div class="sidebar-module">
         <h4>Things To Do</h4>
         @if (Auth::check())
